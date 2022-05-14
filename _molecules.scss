@@ -1,0 +1,7 @@
+@use 'variables' as *;
+
+header[role='banner'] {
+  display:flex;
+  align-items: center;
+  flex-direction: column;
+}
