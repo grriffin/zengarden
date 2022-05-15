@@ -7,10 +7,8 @@
   color: $color;
 }
 
-@mixin center() {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
+body {
+  font-size: 20px;
 }
 
 h1 {
@@ -21,12 +19,17 @@ h1 {
 
 h2 {
   color: $darkblue;
-  font-size: 2em;
+  font-size: 3.5em;
   font-family: $fonts-headline;
 }
 
 h3 {
   @include uppercase($green);
+  font-size: 1.75em;
+}
+
+h4 {
+  @include uppercase($darkblue);
   font-size: 1.5em;
 }
 

@@ -1,6 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap");
+body {
+  font-size: 20px;
+}
+
 h1 {
   font-weight: 300;
   letter-spacing: 1.5px;
@@ -12,7 +16,7 @@ h1 {
 
 h2 {
   color: #1B74BB;
-  font-size: 2em;
+  font-size: 3.5em;
   font-family: "Josefin Sans", "Ubuntu", "Press Start 2P", Arial, Verdana, sans-serif;
 }
 
@@ -21,6 +25,14 @@ h3 {
   letter-spacing: 1.5px;
   text-transform: uppercase;
   color: #8BC53F;
+  font-size: 1.75em;
+}
+
+h4 {
+  font-weight: 300;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #1B74BB;
   font-size: 1.5em;
 }
 
