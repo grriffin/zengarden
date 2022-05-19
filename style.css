@@ -11,13 +11,13 @@ h1 {
   text-transform: uppercase;
   color: #EC008B;
   font-size: 1.16em;
-  font-family: "Josefin Sans", "Ubuntu", "Press Start 2P", Arial, Verdana, sans-serif;
+  font-family: "Press Start 2P", Arial, Verdana, sans-serif;
 }
 
 h2 {
   color: #1B74BB;
   font-size: 3.5em;
-  font-family: "Josefin Sans", "Ubuntu", "Press Start 2P", Arial, Verdana, sans-serif;
+  font-family: "Press Start 2P", Arial, Verdana, sans-serif;
 }
 
 h3 {
@@ -26,6 +26,7 @@ h3 {
   text-transform: uppercase;
   color: #8BC53F;
   font-size: 1.75em;
+  font-family: "Press Start 2P", Arial, Verdana, sans-serif;
 }
 
 h4 {

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=divice-width, initial-scale=1.0">
+  <title>Pattern Library/Style Guide</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-color: #1B74BB;
+      padding: 20px;
+    }
+    main {
+      width:90%;
+      margin-left:auto;
+      margin-right:auto;
+      background-color: azure;
+      padding:1em;
+    }
+    section {
+      margin:10px;
+      margin-left:auto;
+      margin-right:auto;
+      background-color: white;
+      padding:1em;
+      
+    }
+
+    .colorblock {
+      flex:1 1 0px;
+      border: 1px solid black;
+      display:flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .element {
+      border: 1px solid black;
+      padding: .5em;
+      margin:1em;
+    }
+
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Zen Pattern Library</h1>
+    <h2>Theme: Tetris</h2>
+    <p>Our theme is based on the game Tetris. Tetris gives us some cool shapes and 
+      colors to work with right up front, and we wanted to create a very colorful zen garden.</p>
+    <section>
+      <h3>Fonts</h3>
+      <p>Body: Verdana, Arial, sans-serif</p>
+      ABCDEFGHIJKLMNOPQRSTUVWXYZ <br>
+      abcdefghijklmnopqrstuvwxyz<br>
+      1234567890<br>      
+      <p>Headlines: "Press Start 2P", Arial, Verdana, sans-serif</p>
+      <span style="font-family:'Press Start 2P', Arial, Verdana, sans-serif">ABCDEFGHIJKLMNOPQRSTUVWXYZ <br>
+      abcdefghijklmnopqrstuvwxyz<br>
+      1234567890<br></span>
+    </section>
+    <section>
+      <h3>Colors</h3>
+      <div style="display:flex;flex-flow:row wrap;width:100%;height:150px;">
+        <div class="colorblock" style="background-color:#EC1B24;">#EC1B24;</div>
+        <div class="colorblock" style="background-color:#1B74BB;">#1B74BB;</div>
+        <div class="colorblock" style="background-color:#00ADEE;">#00ADEE;</div>
+        <div class="colorblock" style="background-color:#F6921E;">#F6921E;</div>
+        <div class="colorblock" style="background-color:#FFF100;">#FFF100;</div>
+        <div class="colorblock" style="background-color:#EC008B;">#EC008B;</div>
+        <div class="colorblock" style="background-color:#8BC53F;">#8BC53F;</div>
+      </div>
+    </section>
+    <section>
+      <h3>Elements</h3>
+      <div class="element">
+        <p>H1</p>
+        <h1>Headline 1</h1>
+      </div>
+      <div class="element">
+        <p>H2</p>
+        <h2>Headline 2</h2>
+      </div>
+      <div class="element">
+        <p>H3</p>
+        <h3>Headline 3</h3>
+      </div>
+            <div class="element">
+        <p>H4</p>
+        <h4>Headline 4</h4>
+      </div>
+      <div class="element">
+        <p>Link</p>
+        <a href="#">Some kind of link</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

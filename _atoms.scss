@@ -26,6 +26,7 @@ h2 {
 h3 {
   @include uppercase($green);
   font-size: 1.75em;
+  font-family: $fonts-headline;
 }
 
 h4 {
