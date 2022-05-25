@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap");
+
 body {
   font-size: 20px;
 }
@@ -16,7 +17,7 @@ h1 {
 
 h2 {
   color: #1B74BB;
-  font-size: 3.5em;
+  font-size: 2em;
   font-family: "Press Start 2P", Arial, Verdana, sans-serif;
 }
 
@@ -44,22 +45,103 @@ a {
   color: #F6921E;
   text-decoration: none;
 }
+
 a:hover {
   color: #d87809;
   font-style: italic;
 }
+
 a:visited {
   color: #a75d07;
 }
 
 header[role=banner] {
+  height: 600px;
   display: flex;
   align-items: center;
   flex-direction: column;
+  background-image: url("./l1-01.svg");
+  background-repeat: no-repeat;
+  -webkit-animation: slidein 3s;
+  animation: slidein 3s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+
+}
+
+/* @-webkit-keyframes slidein {
+  from {
+    background-position: top;
+  }
+
+  to {
+    background-position: -98px 0px;
+  }
+}
+
+@keyframes slidein {
+  from {
+    background-position: top;
+  }
+
+  to {
+    background-position: -98px 0px;
+  }
+
+} */
+
+header h1 {
+  position: absolute;
+  top: 5em;
+
+}
+
+header h2 {
+  position: absolute;
+  top: 5em;
+  /* animation: colorchange 5s infinite alternate; */
+}
+
+@keyframes colorchange {
+  0% {
+    color: #1B74BB;
+  }
+
+  20% {
+    color: #72cb3b;
+  }
+
+  40% {
+    color: #ffd500;
+  }
+
+  60% {
+    color: #ff971c;
+  }
+
+  80% {
+    color: #ff3213;
+  }
+
+  100% {
+    color: violet;
+  }
 }
 
 * {
   box-sizing: border-box;
+}
+section .summary{
+  position: absolute;
+  text-align: center;
+  font-size: 0.8em;
+  left: 33em;
+  top:400px;
+  width: 300px;
 }
 
 /*# sourceMappingURL=style.css.map */
