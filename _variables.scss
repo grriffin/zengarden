@@ -11,3 +11,6 @@ $orange: #F6921E;
 $yellow: #FFF100;
 $pink: #EC008B;
 $green: #8BC53F;
+$column-width:24px;
+$column-gutter:6px;
+$tetris-block-size:($column-width+$column-gutter)*2;

@@ -1,0 +1,22 @@
+<svg  xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      width="354" height="256"
+      viewBox="0 0 354 256">
+    <rect x="0" y="0" height="25" width="25"
+       stroke="#ffffff" stroke-width="3" fill="#1B74BB"/>
+    <rect x="25" y="0" height="25" width="25"
+       stroke="#ffffff" stroke-width="3" fill="#1B74BB"/>
+    <rect x="50" y="0" height="25" width="25"
+       stroke="#ffffff" stroke-width="3" fill="#1B74BB"/>
+    <rect x="0" y="25" height="25" width="25"
+       stroke="#ffffff" stroke-width="3" fill="#1B74BB"/>
+
+    <rect x="329" y="181" height="25" width="25"
+       stroke="#ffffff" stroke-width="3" fill="#1B74BB"/>
+    <rect x="329" y="206" height="25" width="25"
+       stroke="#ffffff" stroke-width="3" fill="#1B74BB"/>
+    <rect x="329" y="231" height="25" width="25"
+       stroke="#ffffff" stroke-width="3" fill="#1B74BB"/>
+    <rect x="304" y="231" height="25" width="25"
+       stroke="#ffffff" stroke-width="3" fill="#1B74BB"/>
+</svg>

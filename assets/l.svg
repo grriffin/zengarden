@@ -1,0 +1,13 @@
+<svg  xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      width="100" height="50"
+      viewBox="0 0 100 50">
+    <rect x="0" y="0" height="25" width="25"
+       stroke="#ffffff" stroke-width="3" fill="#1B74BB"/>
+    <rect x="25" y="0" height="25" width="25"
+       stroke="#ffffff" stroke-width="3" fill="#1B74BB"/>
+    <rect x="50" y="0" height="25" width="25"
+       stroke="#ffffff" stroke-width="3" fill="#1B74BB"/>
+    <rect x="0" y="25" height="25" width="25"
+       stroke="#ffffff" stroke-width="3" fill="#1B74BB"/>
+</svg>

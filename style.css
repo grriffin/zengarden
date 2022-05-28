@@ -1,24 +1,30 @@
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap");
-
 body {
-  font-size: 20px;
+  font-size: 14px;
+  font-family: Helvetica, Arial, sans-serif;
 }
 
 h1 {
+  margin-top: 0.25em;
+  margin-bottom: 0;
   font-weight: 300;
   letter-spacing: 1.5px;
   text-transform: uppercase;
   color: #EC008B;
-  font-size: 1.16em;
+  font-size: 0.5rem;
   font-family: "Press Start 2P", Arial, Verdana, sans-serif;
 }
 
 h2 {
+  margin-top: 0.5em;
+  margin-left: 50px;
+  margin-right: 50px;
   color: #1B74BB;
-  font-size: 2em;
+  font-size: 1.35rem;
   font-family: "Press Start 2P", Arial, Verdana, sans-serif;
+  text-align: center;
 }
 
 h3 {
@@ -26,7 +32,7 @@ h3 {
   letter-spacing: 1.5px;
   text-transform: uppercase;
   color: #8BC53F;
-  font-size: 1.75em;
+  font-size: 1.2rem;
   font-family: "Press Start 2P", Arial, Verdana, sans-serif;
 }
 
@@ -35,7 +41,7 @@ h4 {
   letter-spacing: 1.5px;
   text-transform: uppercase;
   color: #1B74BB;
-  font-size: 1.5em;
+  font-size: 1.1rem;
 }
 
 a {
@@ -45,103 +51,36 @@ a {
   color: #F6921E;
   text-decoration: none;
 }
-
 a:hover {
   color: #d87809;
   font-style: italic;
 }
-
 a:visited {
   color: #a75d07;
 }
 
 header[role=banner] {
-  height: 600px;
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
-  background-image: url("./l1-01.svg");
-  background-repeat: no-repeat;
-  -webkit-animation: slidein 3s;
-  animation: slidein 3s;
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-  -webkit-animation-direction: alternate;
-  animation-direction: alternate;
-
+  background-image: url("/assets/l-50.svg"), url("/assets/reverse-l-50.svg");
+  background-position: left top, right bottom;
+  background-repeat: no-repeat, no-repeat;
+  background-size: 180px 120px, 120px 180px;
+  height: 14rem;
 }
 
-/* @-webkit-keyframes slidein {
-  from {
-    background-position: top;
-  }
-
-  to {
-    background-position: -98px 0px;
-  }
+.summary {
+  margin-top: -60px;
+  margin-right: 120px;
 }
-
-@keyframes slidein {
-  from {
-    background-position: top;
-  }
-
-  to {
-    background-position: -98px 0px;
-  }
-
-} */
-
-header h1 {
-  position: absolute;
-  top: 5em;
-
-}
-
-header h2 {
-  position: absolute;
-  top: 5em;
-  /* animation: colorchange 5s infinite alternate; */
-}
-
-@keyframes colorchange {
-  0% {
-    color: #1B74BB;
-  }
-
-  20% {
-    color: #72cb3b;
-  }
-
-  40% {
-    color: #ffd500;
-  }
-
-  60% {
-    color: #ff971c;
-  }
-
-  80% {
-    color: #ff3213;
-  }
-
-  100% {
-    color: violet;
-  }
+.summary p {
+  margin-top: 0;
 }
 
 * {
   box-sizing: border-box;
-}
-section .summary{
-  position: absolute;
-  text-align: center;
-  font-size: 0.8em;
-  left: 33em;
-  top:400px;
-  width: 300px;
 }
 
 /*# sourceMappingURL=style.css.map */
