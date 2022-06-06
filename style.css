@@ -1,147 +1,21 @@
-@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap");
+/* Error: Undefined mixin.
+ *    ,
+ * 84 | /   @include for-desktop-up {    
+ * 85 | |     max-width: 1024px;
+ * 86 | |     margin-left:auto;
+ * 87 | |     margin-right:auto;
+ * 88 | \   }
+ *    '
+ *   _atoms.scss 84:3  @use
+ *   style.scss 1:1    root stylesheet */
 
-body {
-  font-size: 20px;
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Undefined mixin.\a    \2577 \a 84 \2502  \250c    @include for-desktop-up {    \a 85 \2502  \2502      max-width: 1024px;\a 86 \2502  \2502      margin-left:auto;\a 87 \2502  \2502      margin-right:auto;\a 88 \2502  \2514    }\a    \2575 \a   _atoms.scss 84:3  @use\a   style.scss 1:1    root stylesheet";
 }
-
-h1 {
-  font-weight: 300;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: #EC008B;
-  font-size: 1.16em;
-  font-family: "Press Start 2P", Arial, Verdana, sans-serif;
-}
-
-h2 {
-  color: #1B74BB;
-  font-size: 2em;
-  font-family: "Press Start 2P", Arial, Verdana, sans-serif;
-}
-
-h3 {
-  font-weight: 300;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: #8BC53F;
-  font-size: 1.75em;
-  font-family: "Press Start 2P", Arial, Verdana, sans-serif;
-}
-
-h4 {
-  font-weight: 300;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: #1B74BB;
-  font-size: 1.5em;
-}
-
-a {
-  font-weight: 300;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: #F6921E;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #d87809;
-  font-style: italic;
-}
-
-a:visited {
-  color: #a75d07;
-}
-
-header[role=banner] {
-  height: 600px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  background-image: url("./l1-01.svg");
-  background-repeat: no-repeat;
-  -webkit-animation: slidein 3s;
-  animation: slidein 3s;
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-  -webkit-animation-direction: alternate;
-  animation-direction: alternate;
-
-}
-
-/* @-webkit-keyframes slidein {
-  from {
-    background-position: top;
-  }
-
-  to {
-    background-position: -98px 0px;
-  }
-}
-
-@keyframes slidein {
-  from {
-    background-position: top;
-  }
-
-  to {
-    background-position: -98px 0px;
-  }
-
-} */
-
-header h1 {
-  position: absolute;
-  top: 5em;
-
-}
-
-header h2 {
-  position: absolute;
-  top: 5em;
-  /* animation: colorchange 5s infinite alternate; */
-}
-
-@keyframes colorchange {
-  0% {
-    color: #1B74BB;
-  }
-
-  20% {
-    color: #72cb3b;
-  }
-
-  40% {
-    color: #ffd500;
-  }
-
-  60% {
-    color: #ff971c;
-  }
-
-  80% {
-    color: #ff3213;
-  }
-
-  100% {
-    color: violet;
-  }
-}
-
-* {
-  box-sizing: border-box;
-}
-section .summary{
-  position: absolute;
-  text-align: center;
-  font-size: 0.8em;
-  left: 33em;
-  top:400px;
-  width: 300px;
-}
-
-/*# sourceMappingURL=style.css.map */

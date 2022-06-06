@@ -1,13 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Odibee+Sans&family=Press+Start+2P&family=Source+Sans+Pro&display=swap');
 
-$fonts-headline:"Press Start 2P", Arial, Verdana, sans-serif;
-$fonts-body: Verdana, Arial, sans-serif;
-$red: #EC1B24;
-$darkblue: #1B74BB;
-$lightblue: #00ADEE;
-$orange: #F6921E;
-$yellow: #FFF100;
-$pink: #EC008B;
-$green: #8BC53F;
+//font-families
+
+$fontfamily-odibee: 'Odibee Sans', 'Source Sans Pro', Arial, sans-serif;
+$fontfamily-press-start:'Press Start 2P', Arial, Verdana, sans-serif;
+$fontfamily-source: 'Source Sans Pro', sans-serif;
+
+$fontsize-mainheading: 32pt;
+$fontsize-mainheading-large:96pt;
+$fontsize-subheading: 16pt;
+$fontsize-subheading-large: 24pt;
+$fontsize-sidebarheading: 24pt;
+$fontsize-sidebarsubheading-allcaps: 15pt;
+$fontsize-sidebarsubheading: 14pt;
+$fontsize-sidebar-author: 11pt;
+$fontsize-body: 12pt;
+$fontsize-large: 14pt;
+
+
+//
+$red: #ED1A25;
+$darkblue: #15295B;
+$lightblue: #00ACE5;
+$purple: #AB1DA4;
+$orange: #FD8C13;
+$yellow: #FFCC22;
+$green: #48C233;
+
+
+$body-color: #2D2D2D;
+$body-color-light: white;

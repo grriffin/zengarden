@@ -1,41 +1,70 @@
 @use 'variables' as *;
 
-@mixin uppercase($color: $text-dark) {
-  font-weight: 300;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: $color;
+@mixin font-odibee($size: false, $color: false, $weight: false, $lh: false) {
+    font-family: $fontfamily-odibee;
+    text-transform: uppercase;
+    @if $size { font-size: $size; }
+    @if $color { color: $color; }
+    @if $weight { font-weight: $weight; }
+    @if $lh { line-height: $lh; }
 }
 
+@mixin font-press-start($size: false, $color: false, $weight: false, $lh: false) {
+    font-family: $fontfamily-press-start;
+    @if $size { font-size: $size; }
+    @if $color { color: $color; }
+    @if $weight { font-weight: $weight; }
+    @if $lh { line-height: $lh; }
+}
+
+@mixin font-source($size: false, $color: false, $weight: false, $lh: false, $all-caps:false) {
+    font-family: $fontfamily-source;
+    @if $size { font-size: $size; }
+    @if $color { color: $color; }
+    @if $weight { font-weight: $weight; }
+    @if $lh { line-height: $lh; }
+    @if $all-caps { text-transform: uppercase;}
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+
 body {
-  font-size: 20px;
+  @include font-source($fontsize-body, $body-color);
 }
 
 h1 {
-  @include uppercase($pink);
-  font-size: 1.16em;
-  font-family: $fonts-headline;
+  @include font-odibee($fontsize-body, $purple);
+  margin-top:.5em;
+  margin-bottom:0;
 }
 
 h2 {
-  color: $darkblue;
-  font-size: 3.5em;
-  font-family: $fonts-headline;
+  @include font-odibee($fontsize-mainheading, black);
+  margin-top:.3em;
+  margin-left:50px;
+  margin-right:50px;
+  text-align: center;
 }
 
 h3 {
-  @include uppercase($green);
-  font-size: 1.75em;
-  font-family: $fonts-headline;
+  @include font-press-start($fontsize-subheading, $lightblue);
 }
 
 h4 {
-  @include uppercase($darkblue);
-  font-size: 1.5em;
+  @include font-source($fontsize-sidebarheading, black);
 }
 
 a {
-  @include uppercase($orange);
+  //@include uppercase($orange);
   text-decoration: none;
   &:hover {
     color: darken($orange, 10%);
@@ -47,3 +76,14 @@ a {
   }
 }
 
+
+.page-wrapper {
+  width: 100%;
+
+
+  @include for-desktop-up {    
+    max-width: 1024px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+}
