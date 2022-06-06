@@ -1,21 +1,96 @@
-/* Error: Undefined mixin.
- *    ,
- * 84 | /   @include for-desktop-up {    
- * 85 | |     max-width: 1024px;
- * 86 | |     margin-left:auto;
- * 87 | |     margin-right:auto;
- * 88 | \   }
- *    '
- *   _atoms.scss 84:3  @use
- *   style.scss 1:1    root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Undefined mixin.\a    \2577 \a 84 \2502  \250c    @include for-desktop-up {    \a 85 \2502  \2502      max-width: 1024px;\a 86 \2502  \2502      margin-left:auto;\a 87 \2502  \2502      margin-right:auto;\a 88 \2502  \2514    }\a    \2575 \a   _atoms.scss 84:3  @use\a   style.scss 1:1    root stylesheet";
+@import url("https://fonts.googleapis.com/css2?family=Odibee+Sans&family=Press+Start+2P&family=Source+Sans+Pro&display=swap");
+html {
+  box-sizing: border-box;
 }
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 12pt;
+  color: #2D2D2D;
+}
+
+h1 {
+  font-family: "Odibee Sans", "Source Sans Pro", Arial, sans-serif;
+  text-transform: uppercase;
+  font-size: 12pt;
+  color: #AB1DA4;
+  margin-top: 0.5em;
+  margin-bottom: 0;
+}
+
+h2 {
+  font-family: "Odibee Sans", "Source Sans Pro", Arial, sans-serif;
+  text-transform: uppercase;
+  font-size: 32pt;
+  color: black;
+  margin-top: 0.3em;
+  margin-left: 50px;
+  margin-right: 50px;
+  text-align: center;
+}
+
+h3 {
+  font-family: "Press Start 2P", Arial, Verdana, sans-serif;
+  font-size: 16pt;
+  color: #00ACE5;
+}
+
+h4 {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 24pt;
+  color: black;
+}
+
+a {
+  text-decoration: none;
+}
+a:hover {
+  color: #db7202;
+  font-style: italic;
+}
+a:visited {
+  color: #a95801;
+}
+
+.page-wrapper {
+  width: 100%;
+}
+@media (min-width: 1200px) {
+  .page-wrapper {
+    max-width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+header[role=banner] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-image: url("/assets/l-40.svg"), url("/assets/reverse-l-40.svg");
+  background-position: left top, right bottom;
+  background-repeat: no-repeat, no-repeat;
+  background-size: 180px 120px, 120px 180px;
+  height: 14rem;
+}
+
+.summary {
+  margin-top: -60px;
+  margin-right: 120px;
+}
+.summary p {
+  margin-top: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/*# sourceMappingURL=style.css.map */
