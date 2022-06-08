@@ -72,11 +72,17 @@ $tetris-block-size: 60px;
   @media (min-width: 1200px) { @content; }
 }
 
+@mixin standardhpadding {
+  padding-left:1rem;
+  pading-right:1rem;
+}
 
-@mixin subheading($color) {
+@mixin section($color,$padding-left:1rem, $padding-right:1rem) {
   h3 {
     @include font-press-start($fontsize-subheading, $color);
     margin-top:0;
     margin-bottom:1em;
   }
+  padding-left:$padding-left;
+  padding-right:$padding-right;
 }

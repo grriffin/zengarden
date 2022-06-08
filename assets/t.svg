@@ -1,0 +1,13 @@
+<svg  xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      width="80" height="120"
+      viewBox="0 0 80 120">
+    <rect x="0" y="0" height="40" width="40"
+       stroke="#ffffff" stroke-width="3" fill="#F6921E"/>
+    <rect x="0" y="40" height="40" width="40"
+       stroke="#ffffff" stroke-width="3" fill="#F6921E"/>
+    <rect x="0" y="80" height="40" width="40"
+       stroke="#ffffff" stroke-width="3" fill="#F6921E"/>
+    <rect x="40" y="40" height="40" width="40"
+       stroke="#ffffff" stroke-width="3" fill="#F6921E"/>
+</svg>

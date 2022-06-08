@@ -1,8 +1,7 @@
 @use 'variables' as *;
 
-
 header[role='banner'] {
-  display:flex;
+  //display:flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -11,32 +10,41 @@ header[role='banner'] {
   background-repeat: no-repeat, no-repeat;
   background-size: $tetris-block-size*3 $tetris-block-size*2, $tetris-block-size*2 $tetris-block-size*3;
   height: 14rem;
+  margin-left:1rem;
+  margin-right:1rem;
 }
 
 .summary {
-
   margin-top:-$tetris-block-size;
-  margin-right:$tetris-block-size*2;
+  margin-right:$tetris-block-size*2+10px;
+  margin-left:1rem;
 
   p {
     margin-top:0;
+    padding-top:0;
   }
 }
 
-
 .preamble {
-  @include subheading($lightblue);
+  @include section($lightblue);
+  margin-left:1rem;
   padding-top:1em;
+  padding-left:140px;
+  margin-top:1em;
+  background-image: url('/assets/t.svg');
+  background-position: left top;
+  background-repeat: no-repeat;
+  background-size: $tetris-block-size*2 $tetris-block-size*3;
 }
 
 .explanation {
-  @include subheading($green);
+  @include section($green);
   padding-top:1em;
   padding-bottom:1em;
 }
 
 .participation {
-  @include subheading($orange);
+  @include section($orange);
   background-color: black;
   padding-top:1em;
   p {
@@ -45,7 +53,7 @@ header[role='banner'] {
 }
 
 .benefits {
-  @include subheading($yellow);
+  @include section($yellow);
   background-color: black;
   padding-top:1em;
   p {
@@ -54,7 +62,7 @@ header[role='banner'] {
 }
 
 .requirements {
-  @include subheading($darkblue);
+  @include section($darkblue);
 
   padding-top:1em;
 }
