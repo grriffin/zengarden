@@ -10,6 +10,7 @@ html {
 }
 
 body {
+  margin: 0;
   font-family: "Source Sans Pro", sans-serif;
   font-size: 12pt;
   color: #2D2D2D;
@@ -35,12 +36,6 @@ h2 {
   text-align: center;
 }
 
-h3 {
-  font-family: "Press Start 2P", Arial, Verdana, sans-serif;
-  font-size: 16pt;
-  color: #00ACE5;
-}
-
 h4 {
   font-family: "Source Sans Pro", sans-serif;
   font-size: 24pt;
@@ -56,6 +51,11 @@ a:hover {
 }
 a:visited {
   color: #a95801;
+}
+
+p {
+  margin: 0;
+  padding-top: 0.5em;
 }
 
 .page-wrapper {
@@ -87,6 +87,74 @@ header[role=banner] {
 }
 .summary p {
   margin-top: 0;
+}
+
+.preamble {
+  padding-top: 1em;
+}
+.preamble h3 {
+  font-family: "Press Start 2P", Arial, Verdana, sans-serif;
+  font-size: 16pt;
+  color: #00ACE5;
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+.explanation {
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+.explanation h3 {
+  font-family: "Press Start 2P", Arial, Verdana, sans-serif;
+  font-size: 16pt;
+  color: #48C233;
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+.participation {
+  background-color: black;
+  padding-top: 1em;
+}
+.participation h3 {
+  font-family: "Press Start 2P", Arial, Verdana, sans-serif;
+  font-size: 16pt;
+  color: #FD8C13;
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+.participation p {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 12pt;
+  color: white;
+}
+
+.benefits {
+  background-color: black;
+  padding-top: 1em;
+}
+.benefits h3 {
+  font-family: "Press Start 2P", Arial, Verdana, sans-serif;
+  font-size: 16pt;
+  color: #FFCC22;
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+.benefits p {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 12pt;
+  color: white;
+}
+
+.requirements {
+  padding-top: 1em;
+}
+.requirements h3 {
+  font-family: "Press Start 2P", Arial, Verdana, sans-serif;
+  font-size: 16pt;
+  color: #15295B;
+  margin-top: 0;
+  margin-bottom: 1em;
 }
 
 * {

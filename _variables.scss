@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Odibee+Sans&family=Press+Start+2P&family=Source+Sans+Pro&display=swap');
 
 //font-families
-
 $fontfamily-odibee: 'Odibee Sans', 'Source Sans Pro', Arial, sans-serif;
 $fontfamily-press-start:'Press Start 2P', Arial, Verdana, sans-serif;
 $fontfamily-source: 'Source Sans Pro', sans-serif;
@@ -17,8 +16,6 @@ $fontsize-sidebar-author: 11pt;
 $fontsize-body: 12pt;
 $fontsize-large: 14pt;
 
-
-//
 $red: #ED1A25;
 $darkblue: #15295B;
 $lightblue: #00ACE5;
@@ -27,8 +24,59 @@ $orange: #FD8C13;
 $yellow: #FFCC22;
 $green: #48C233;
 
-
 $body-color: #2D2D2D;
 $body-color-light: white;
 
 $tetris-block-size: 60px;
+
+
+@mixin font-odibee($size: false, $color: false, $weight: false, $lh: false) {
+    font-family: $fontfamily-odibee;
+    text-transform: uppercase;
+    @if $size { font-size: $size; }
+    @if $color { color: $color; }
+    @if $weight { font-weight: $weight; }
+    @if $lh { line-height: $lh; }
+}
+
+@mixin font-press-start($size: false, $color: false, $weight: false, $lh: false) {
+    font-family: $fontfamily-press-start;
+    @if $size { font-size: $size; }
+    @if $color { color: $color; }
+    @if $weight { font-weight: $weight; }
+    @if $lh { line-height: $lh; }
+}
+
+@mixin font-source($size: false, $color: false, $weight: false, $lh: false, $all-caps:false) {
+    font-family: $fontfamily-source;
+    @if $size { font-size: $size; }
+    @if $color { color: $color; }
+    @if $weight { font-weight: $weight; }
+    @if $lh { line-height: $lh; }
+    @if $all-caps { text-transform: uppercase;}
+}
+
+@mixin for-phone-only {
+  @media (max-width: 599px) { @content; }
+}
+
+@mixin for-tablet-portrait-up {
+  @media (min-width: 600px) { @content; }
+}
+
+@mixin for-tablet-landscape-up {
+  @media (min-width: 900px) { @content; }
+}
+
+@mixin for-desktop-up {
+  @media (min-width: 1200px) { @content; }
+}
+
+
+@mixin subheading($color) {
+  h3 {
+    @include font-press-start($fontsize-subheading, $color);
+    margin-top:0;
+    margin-bottom:1em;
+  }
+}

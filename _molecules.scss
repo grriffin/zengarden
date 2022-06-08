@@ -1,5 +1,6 @@
 @use 'variables' as *;
 
+
 header[role='banner'] {
   display:flex;
   align-items: center;
@@ -20,4 +21,40 @@ header[role='banner'] {
   p {
     margin-top:0;
   }
+}
+
+
+.preamble {
+  @include subheading($lightblue);
+  padding-top:1em;
+}
+
+.explanation {
+  @include subheading($green);
+  padding-top:1em;
+  padding-bottom:1em;
+}
+
+.participation {
+  @include subheading($orange);
+  background-color: black;
+  padding-top:1em;
+  p {
+    @include font-source($fontsize-body, $body-color-light);
+  }
+}
+
+.benefits {
+  @include subheading($yellow);
+  background-color: black;
+  padding-top:1em;
+  p {
+    @include font-source($fontsize-body, $body-color-light);
+  }  
+}
+
+.requirements {
+  @include subheading($darkblue);
+
+  padding-top:1em;
 }

@@ -1,45 +1,5 @@
 @use 'variables' as *;
 
-@mixin font-odibee($size: false, $color: false, $weight: false, $lh: false) {
-    font-family: $fontfamily-odibee;
-    text-transform: uppercase;
-    @if $size { font-size: $size; }
-    @if $color { color: $color; }
-    @if $weight { font-weight: $weight; }
-    @if $lh { line-height: $lh; }
-}
-
-@mixin font-press-start($size: false, $color: false, $weight: false, $lh: false) {
-    font-family: $fontfamily-press-start;
-    @if $size { font-size: $size; }
-    @if $color { color: $color; }
-    @if $weight { font-weight: $weight; }
-    @if $lh { line-height: $lh; }
-}
-
-@mixin font-source($size: false, $color: false, $weight: false, $lh: false, $all-caps:false) {
-    font-family: $fontfamily-source;
-    @if $size { font-size: $size; }
-    @if $color { color: $color; }
-    @if $weight { font-weight: $weight; }
-    @if $lh { line-height: $lh; }
-    @if $all-caps { text-transform: uppercase;}
-}
-
-@mixin for-phone-only {
-  @media (max-width: 599px) { @content; }
-}
-@mixin for-tablet-portrait-up {
-  @media (min-width: 600px) { @content; }
-}
-@mixin for-tablet-landscape-up {
-  @media (min-width: 900px) { @content; }
-}
-@mixin for-desktop-up {
-  @media (min-width: 1200px) { @content; }
-}
-
-
 html {
   box-sizing: border-box;
 }
@@ -50,8 +10,8 @@ html {
   box-sizing: inherit;
 }
 
-
 body {
+  margin:0;
   @include font-source($fontsize-body, $body-color);
 }
 
@@ -67,10 +27,6 @@ h2 {
   margin-left:50px;
   margin-right:50px;
   text-align: center;
-}
-
-h3 {
-  @include font-press-start($fontsize-subheading, $lightblue);
 }
 
 h4 {
@@ -90,6 +46,10 @@ a {
   }
 }
 
+p {
+  margin:0;
+  padding-top:.5em;
+}
 
 .page-wrapper {
   width: 100%;
