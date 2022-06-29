@@ -1,15 +1,41 @@
 @use 'variables' as *;
 
+@keyframes colorchange {
+  0% {
+    color: $darkblue;
+  }
+
+  20% {
+    color: $lightblue;
+  }
+
+  40% {
+    color: $green;
+  }
+
+  60% {
+    color: $orange;
+  }
+
+  80% {
+    color: $red;
+  }
+
+  100% {
+    color: $purple;
+  }
+}
+
 /* Header */
 header[role='banner'] {
   //display:flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-image: tetris-l($lightblue, $tetris-block-size),url('/assets/reverse-l-40.svg');
+  background-image: tetris-l-90($lightblue), tetris-reverse-l($green);
   background-position: left top, right bottom;
   background-repeat: no-repeat, no-repeat;
-  background-size: $tetris-block-size*3 $tetris-block-size*3, $tetris-block-size*2 $tetris-block-size*3;
+  background-size: $tetris-block-size*3, $tetris-block-size*3;
   height: 14rem;
   margin-left:1rem;
   margin-right:1rem;
@@ -24,6 +50,7 @@ header[role='banner'] {
     margin-left:$tetris-block-size;
     margin-right:$tetris-block-size;
     margin-bottom: 0;
+    animation: colorchange 5s infinite alternate;
   }
 }
 
@@ -34,15 +61,15 @@ header[role='banner'] {
 }
 
 .preamble {
-  @include section($lightblue);
+  @include section($purple);
   margin-left:1rem;
   padding-top:1em;
   padding-left:140px;
   margin-top:1em;
-  background-image: url('/assets/t.svg');
-  background-position: left top;
+  background-image: tetris-t-90($orange);
+  background-position: left center;
   background-repeat: no-repeat;
-  background-size: $tetris-block-size*2 $tetris-block-size*3;
+  background-size: $tetris-block-size*3;
 }
 
 .explanation {
@@ -73,4 +100,11 @@ header[role='banner'] {
   @include section($darkblue);
 
   padding-top:1em;
+}
+
+footer {
+  width:100%;
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
 }

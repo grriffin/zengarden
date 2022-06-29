@@ -44,54 +44,86 @@ $column-size: 24px;
   @return url('data:image/svg+xml;utf8,#{str-replace($icon, "#", "%23")}');
 }
 
-@mixin red-filter() {
-  filter: invert(23%) sepia(82%) saturate(6924%) hue-rotate(350deg) brightness(95%) contrast(95%);
-}
-
-@mixin darkblue-filter() {
-  filter: invert(10%) sepia(94%) saturate(1865%) hue-rotate(214deg) brightness(89%) contrast(92%);
-}
-
-@mixin lightblue-filter() {
-  filter: invert(51%) sepia(37%) saturate(5145%) hue-rotate(164deg) brightness(102%) contrast(101%);
-}
-
-@mixin purple-filter() {
-  filter: invert(16%) sepia(66%) saturate(4034%) hue-rotate(290deg) brightness(101%) contrast(95%);
-}
-
-@mixin orange-filter() {
-  filter: invert(77%) sepia(68%) saturate(4794%) hue-rotate(351deg) brightness(102%) contrast(98%);
-}
-
-@mixin yellow-filter() {
-  filter: invert(80%) sepia(83%) saturate(1667%) hue-rotate(336deg) brightness(101%) contrast(101%);
-}
-
-@mixin green-filter() {
-  filter: invert(62%) sepia(14%) saturate(2383%) hue-rotate(65deg) brightness(102%) contrast(81%);
-}
-
-@function tetris-l($fill, $blocksize:$tetris-block-size, $background:white) {
+@function tetris-l-90($fill, $blocksize:$tetris-block-size, $background:white) {
   $numbers: (0, 0) (1, 0) (2, 0) (0,1);
-  @return tetris-piece($fill, $numbers, 60, $background);
-  //$spacing: $blocksize * 0.1; 
-  //@return url-svg('<svg  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="#{$blocksize*3}" height="#{$blocksize*2}" viewBox="0 0 #{$blocksize*3} #{$blocksize*2}"> <rect x="0" y="0" height="#{$blocksize}" width="#{$blocksize}"  stroke="#{$background}" stroke-width="#{$spacing}" fill="#{$fill}"/> <rect x="#{$blocksize}" y="0" height="#{$blocksize}" width="#{$blocksize}"  stroke="#{$background}" stroke-width="#{$spacing}" fill="#{$fill}"/> <rect x="#{$blocksize*2}" y="0" height="#{$blocksize}" width="#{$blocksize}"  stroke="#{$background}" stroke-width="#{$spacing}" fill="#{$fill}"/> <rect x="0" y="#{$blocksize}" height="#{$blocksize}" width="#{$blocksize}"  stroke="#{$background}" stroke-width="#{$spacing}" fill="#{$fill}"/> </svg>');
+  @return tetris-piece($fill, $numbers, $blocksize, $background);
+}
+
+@function tetris-t-90($fill, $blocksize:$tetris-block-size, $background:white) {
+  $numbers: (0, 0) (0, 1) (0, 2) (1,1);
+  @return tetris-piece($fill, $numbers, $blocksize, $background);
 }
 
 @function tetris-reverse-l($fill, $blocksize:$tetris-block-size, $background:white) {
-  $spacing: $blocksize * 0.1; 
-  @return url-svg('<svg  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="#{$blocksize*2}" height="#{$blocksize*3}" viewBox="0 0 80 #{$blocksize*3}"> <rect x="#{$blocksize}" y="0" height="#{$blocksize}" width="#{$blocksize}" stroke="#{$background}" stroke-width="#{spacing}" fill="#{$fill}"/> <rect x="#{$blocksize}" y="#{$blocksize}" height="#{$blocksize}" width="#{$blocksize}" stroke="#{$background}" stroke-width="#{spacing}" fill="#{$fill}"/> <rect x="#{$blocksize}" y="#{$blocksize*2}" height="#{$blocksize}" width="#{$blocksize}" stroke="#{$background}" stroke-width="#{spacing}" fill="#{$fill}"/> <rect x="0" y="#{$blocksize*2}" height="#{$blocksize}" width="#{$blocksize}" stroke="#{$background}" stroke-width="#{spacing}" fill="#{$fill}"/> </svg>');
+  $numbers: (2, 0) (2, 1) (2, 2) (1,2);
+  @return tetris-piece($fill, $numbers, $blocksize, $background);
 }
 
+@function tetris-bar($fill, $blocksize:$tetris-block-size, $background:white) {
+  $numbers: (0, 0) (0, 1) (0, 2) (0,3);
+  @return tetris-piece($fill, $numbers, $blocksize, $background);
+}
+
+@function tetris-z($fill, $blocksize:$tetris-block-size, $background:white) {
+  $numbers: (0, 2) (1, 2) (1, 3) (2,3);
+  @return tetris-piece($fill, $numbers, $blocksize, $background);
+}
+
+@function tetris-l($fill, $blocksize:$tetris-block-size, $background:white) {
+  $numbers: (0, 1) (0, 2) (0, 3) (1,3);
+  @return tetris-piece($fill, $numbers, $blocksize, $background);
+}
+
+@function tetris-square($fill, $blocksize:$tetris-block-size, $background:white) {
+  $numbers: (0, 2) (0, 3) (1, 2) (1,3);
+  @return tetris-piece($fill, $numbers, $blocksize, $background);
+}
+
+@function tetris-t($fill, $blocksize:$tetris-block-size, $background:white) {
+  $numbers: (0, 2) (1, 2) (2, 2) (1,3);
+  @return tetris-piece($fill, $numbers, $blocksize, $background);
+}
+
+/****************************************
+* Build a Tetris piece!
+* $fill - the color you want your piece to be
+* $blocks - the blocks you want to make up your piece. This is a list of positions
+*           in the multi-dimensional list format like this: (0, 0) (1, 0) (2, 2)
+            Think of the piece like a 3x3 grid (the grid size is always square, but the
+            actual size is calculated by using the numbers you pass in 3x3 in this example)
+            Each pair in the list is an x, y position in a grid where you 
+            a block. so (0,0) puts a block in the upper left hand corner of the whole piece,
+            and (2, 2) puts a block in the bottom right hand corner. To make an L piece, you
+            need (0,0) (0, 1) (0, 2) (1,2) 
+            X - -  
+            X - -  
+            X X -  
+
+            here's a map of all coordinates:
+            (0, 0) (1, 0) (2, 0)
+            (0, 1) (1, 1) (2, 1)
+            (0, 2) (1, 2) (2, 2)
+
+  $blocksize - The size, which defaults to the variable $tetris-block-size
+  $background - The background color of the page, for the "transparent" sections
+*****************************************/
 @function tetris-piece($fill, $blocks, $blocksize:$tetris-block-size, $background:white) {
   $spacing: $blocksize * 0.1; 
-  $svg: '<svg  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="#{$blocksize*3}" height="#{$blocksize*3}" viewBox="0 0 #{$blocksize*3} #{$blocksize*3}">';
+  $svg: '';
+  $max-width: 0;
+  $max-height: 0;
   @each $block-x, $block-y in $blocks {
     $svg : $svg + tetris-block($block-x, $block-y, $fill, $blocksize, $background, $spacing);
+    @if ($block-x > $max-width) {
+      $max-width: $block-x;
+    }
+    @if ($block-y > $max-height) {
+      $max-height: $block-y;
+    }
   }
-  $svg: $svg + '</svg>';
-  @return url-svg($svg);
+  $grid-size: $blocksize * (max($max-height, $max-width)+1);
+  $svg-header: '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="#{$grid-size}" height="#{$grid-size}" viewBox="0 0 #{$grid-size} #{$grid-size}">';
+  @return url-svg($svg-header + $svg + '</svg>');
   /*@return url-svg($svg-header 
     + tetris-block(0, 0, $fill, $blocksize, $background, $spacing)
     + tetris-block(1, 0, $fill, $blocksize, $background, $spacing)

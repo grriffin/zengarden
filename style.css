@@ -1,4 +1,27 @@
 @import url("https://fonts.googleapis.com/css2?family=Odibee+Sans&family=Press+Start+2P&family=Source+Sans+Pro&display=swap");
+/****************************************
+* Build a Tetris piece!
+* $fill - the color you want your piece to be
+* $blocks - the blocks you want to make up your piece. This is a list of positions
+*           in the multi-dimensional list format like this: (0, 0) (1, 0) (2, 2)
+            Think of the piece like a 3x3 grid (the grid size is always square, but the
+            actual size is calculated by using the numbers you pass in 3x3 in this example)
+            Each pair in the list is an x, y position in a grid where you 
+            a block. so (0,0) puts a block in the upper left hand corner of the whole piece,
+            and (2, 2) puts a block in the bottom right hand corner. To make an L piece, you
+            need (0,0) (0, 1) (0, 2) (1,2) 
+            X - -  
+            X - -  
+            X X -  
+
+            here's a map of all coordinates:
+            (0, 0) (1, 0) (2, 0)
+            (0, 1) (1, 1) (2, 1)
+            (0, 2) (1, 2) (2, 2)
+
+  $blocksize - The size, which defaults to the variable $tetris-block-size
+  $background - The background color of the page, for the "transparent" sections
+*****************************************/
 html {
   box-sizing: border-box;
 }
@@ -65,6 +88,42 @@ p {
   padding-top: 0.5em;
 }
 
+footer a {
+  height: 3rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background-position: left center;
+  background-repeat: no-repeat;
+  margin: 1rem;
+  text-align: center;
+}
+footer a:nth-child(1) {
+  padding-left: 1rem;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="4rem" height="4rem" viewBox="0 0 4rem 4rem"><rect x="0rem" y="0rem" height="1rem" width="1rem" stroke="white" stroke-width="0.1rem" fill="%2300ACE5"/><rect x="0rem" y="1rem" height="1rem" width="1rem" stroke="white" stroke-width="0.1rem" fill="%2300ACE5"/><rect x="0rem" y="2rem" height="1rem" width="1rem" stroke="white" stroke-width="0.1rem" fill="%2300ACE5"/><rect x="0rem" y="3rem" height="1rem" width="1rem" stroke="white" stroke-width="0.1rem" fill="%2300ACE5"/></svg>');
+  background-size: 3rem 3rem;
+}
+footer a:nth-child(2) {
+  padding-left: 2.6rem;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="4rem" height="4rem" viewBox="0 0 4rem 4rem"><rect x="0rem" y="2rem" height="1rem" width="1rem" stroke="white" stroke-width="0.1rem" fill="%2348C233"/><rect x="1rem" y="2rem" height="1rem" width="1rem" stroke="white" stroke-width="0.1rem" fill="%2348C233"/><rect x="1rem" y="3rem" height="1rem" width="1rem" stroke="white" stroke-width="0.1rem" fill="%2348C233"/><rect x="2rem" y="3rem" height="1rem" width="1rem" stroke="white" stroke-width="0.1rem" fill="%2348C233"/></svg>');
+  background-size: 3rem 3rem;
+}
+footer a:nth-child(3) {
+  padding-left: 2rem;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="4rem" height="4rem" viewBox="0 0 4rem 4rem"><rect x="0rem" y="1rem" height="1rem" width="1rem" stroke="white" stroke-width="0.1rem" fill="%23FD8C13"/><rect x="0rem" y="2rem" height="1rem" width="1rem" stroke="white" stroke-width="0.1rem" fill="%23FD8C13"/><rect x="0rem" y="3rem" height="1rem" width="1rem" stroke="white" stroke-width="0.1rem" fill="%23FD8C13"/><rect x="1rem" y="3rem" height="1rem" width="1rem" stroke="white" stroke-width="0.1rem" fill="%23FD8C13"/></svg>');
+  background-size: 3rem 3rem;
+}
+footer a:nth-child(4) {
+  padding-left: 2rem;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="4rem" height="4rem" viewBox="0 0 4rem 4rem"><rect x="0rem" y="2rem" height="1rem" width="1rem" stroke="white" stroke-width="0.1rem" fill="%23ED1A25"/><rect x="0rem" y="3rem" height="1rem" width="1rem" stroke="white" stroke-width="0.1rem" fill="%23ED1A25"/><rect x="1rem" y="2rem" height="1rem" width="1rem" stroke="white" stroke-width="0.1rem" fill="%23ED1A25"/><rect x="1rem" y="3rem" height="1rem" width="1rem" stroke="white" stroke-width="0.1rem" fill="%23ED1A25"/></svg>');
+  background-size: 3rem 3rem;
+}
+footer a:nth-child(5) {
+  padding-left: 2.6rem;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="4rem" height="4rem" viewBox="0 0 4rem 4rem"><rect x="0rem" y="2rem" height="1rem" width="1rem" stroke="white" stroke-width="0.1rem" fill="%23AB1DA4"/><rect x="1rem" y="2rem" height="1rem" width="1rem" stroke="white" stroke-width="0.1rem" fill="%23AB1DA4"/><rect x="2rem" y="2rem" height="1rem" width="1rem" stroke="white" stroke-width="0.1rem" fill="%23AB1DA4"/><rect x="1rem" y="3rem" height="1rem" width="1rem" stroke="white" stroke-width="0.1rem" fill="%23AB1DA4"/></svg>');
+  background-size: 3rem 3rem;
+}
+
 .page-wrapper {
   width: 100%;
 }
@@ -76,15 +135,35 @@ p {
   }
 }
 
+@keyframes colorchange {
+  0% {
+    color: #15295B;
+  }
+  20% {
+    color: #00ACE5;
+  }
+  40% {
+    color: #48C233;
+  }
+  60% {
+    color: #FD8C13;
+  }
+  80% {
+    color: #ED1A25;
+  }
+  100% {
+    color: #AB1DA4;
+  }
+}
 /* Header */
 header[role=banner] {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-image: url('data:image/svg+xml;utf8,<svg  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="180" height="180" viewBox="0 0 180 180"><rect x="0" y="0" height="60" width="60" stroke="white" stroke-width="6" fill="%2300ACE5"/><rect x="60" y="0" height="60" width="60" stroke="white" stroke-width="6" fill="%2300ACE5"/><rect x="120" y="0" height="60" width="60" stroke="white" stroke-width="6" fill="%2300ACE5"/><rect x="0" y="60" height="60" width="60" stroke="white" stroke-width="6" fill="%2300ACE5"/></svg>'), url("/assets/reverse-l-40.svg");
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="180px" height="180px" viewBox="0 0 180px 180px"><rect x="0px" y="0px" height="60px" width="60px" stroke="white" stroke-width="6px" fill="%2300ACE5"/><rect x="60px" y="0px" height="60px" width="60px" stroke="white" stroke-width="6px" fill="%2300ACE5"/><rect x="120px" y="0px" height="60px" width="60px" stroke="white" stroke-width="6px" fill="%2300ACE5"/><rect x="0px" y="60px" height="60px" width="60px" stroke="white" stroke-width="6px" fill="%2300ACE5"/></svg>'), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="180px" height="180px" viewBox="0 0 180px 180px"><rect x="120px" y="0px" height="60px" width="60px" stroke="white" stroke-width="6px" fill="%2348C233"/><rect x="120px" y="60px" height="60px" width="60px" stroke="white" stroke-width="6px" fill="%2348C233"/><rect x="120px" y="120px" height="60px" width="60px" stroke="white" stroke-width="6px" fill="%2348C233"/><rect x="60px" y="120px" height="60px" width="60px" stroke="white" stroke-width="6px" fill="%2348C233"/></svg>');
   background-position: left top, right bottom;
   background-repeat: no-repeat, no-repeat;
-  background-size: 180px 180px, 120px 180px;
+  background-size: 180px, 180px;
   height: 14rem;
   margin-left: 1rem;
   margin-right: 1rem;
@@ -98,6 +177,7 @@ header[role=banner] h2 {
   margin-left: 60px;
   margin-right: 60px;
   margin-bottom: 0;
+  animation: colorchange 5s infinite alternate;
 }
 
 /** Summary section **/
@@ -113,15 +193,15 @@ header[role=banner] h2 {
   padding-top: 1em;
   padding-left: 140px;
   margin-top: 1em;
-  background-image: url("/assets/t.svg");
-  background-position: left top;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="180px" height="180px" viewBox="0 0 180px 180px"><rect x="0px" y="0px" height="60px" width="60px" stroke="white" stroke-width="6px" fill="%23FD8C13"/><rect x="0px" y="60px" height="60px" width="60px" stroke="white" stroke-width="6px" fill="%23FD8C13"/><rect x="0px" y="120px" height="60px" width="60px" stroke="white" stroke-width="6px" fill="%23FD8C13"/><rect x="60px" y="60px" height="60px" width="60px" stroke="white" stroke-width="6px" fill="%23FD8C13"/></svg>');
+  background-position: left center;
   background-repeat: no-repeat;
-  background-size: 120px 180px;
+  background-size: 180px;
 }
 .preamble h3 {
   font-family: "Press Start 2P", Arial, Verdana, sans-serif;
   font-size: 16pt;
-  color: #00ACE5;
+  color: #AB1DA4;
   margin-top: 0;
   margin-bottom: 1em;
 }
@@ -189,6 +269,13 @@ header[role=banner] h2 {
   color: #15295B;
   margin-top: 0;
   margin-bottom: 1em;
+}
+
+footer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 * {
