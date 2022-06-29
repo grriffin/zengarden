@@ -110,3 +110,44 @@ footer {
   flex-direction: row;
   justify-content: center;
 }
+//Boxed Sidebar
+.design-archives, .zen-resources {
+  border: 1px solid $darkblue;
+  max-width: 175px;
+  h3 {
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+  ul {
+    padding: 0px;
+    margin: auto;
+    max-width: 80%;
+  }
+}
+
+//Open Sidebar w/ Color BG
+.design-selection {
+  background-color: $darkblue;
+  color: white;
+  padding: 15px 0px;
+  h3.select{
+    color: white;
+    &::after {
+      @include accent-header-line(white);
+    }
+  }
+  a {
+    &:link {
+      color: white;
+    }
+    &:visited {
+      color: $purple;
+    }
+    &:hover {
+      color: $lightblue;
+    }
+    &:active {
+      color: $green;
+    }
+  }
+}

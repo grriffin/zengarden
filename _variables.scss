@@ -201,3 +201,10 @@ $column-size: 24px;
 }
 
 
+@mixin accent-header-line($color){
+      content: " ";
+      display: block;
+      width: 80%;
+      margin: auto;
+      border-bottom: 2px solid $color;
+}

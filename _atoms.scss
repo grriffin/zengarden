@@ -116,3 +116,52 @@ footer {
     margin-right:auto;
   }
 }
+
+//Sidebar Atoms
+aside.sidebar {
+  //Headings
+  h3 {
+    @include font-source($fontsize-sidebarheading, $darkblue);
+    text-align: center;
+    &::after {
+      @include accent-header-line($darkblue);
+    }
+  }
+  //Archives Nav and Titles
+  .design-name, .next, .viewall {
+    @include font-source($fontsize-sidebarsubheading-allcaps, $all-caps: true);
+    font-style: normal;
+    &:hover {
+      font-style: italic;
+    }
+  }
+  .design-name::after {
+    content: "\a";
+    white-space: pre;
+  }
+  //Authors
+  .designer-name {
+    font-size: 11pt;
+  }
+  //General Sidebar Body Text
+  text-align: center;
+  ul {
+    list-style: none;
+    li {
+      margin-bottom: 15px;
+    }
+  }
+  //Links
+  a {
+    color: $darkblue;
+    &:visited {
+      color: $purple;
+    }
+    &:hover {
+      color: $lightblue;
+    }
+    &:active {
+      color: $green;
+    }
+  }
+}
