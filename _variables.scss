@@ -13,8 +13,8 @@ $fontsize-sidebarheading: 24pt;
 $fontsize-sidebarsubheading-allcaps: 15pt;
 $fontsize-sidebarsubheading: 14pt;
 $fontsize-sidebar-author: 11pt;
-$fontsize-body: 12pt;
-$fontsize-large: 14pt;
+$fontsize-body: 16pt;
+$fontsize-large: 16pt;
 
 $red: #ED1A25;
 $darkblue: #15295B;
@@ -27,7 +27,7 @@ $green: #48C233;
 $body-color: #2D2D2D;
 $body-color-light: white;
 
-$tetris-block-size: 60px;
+$tetris-block-size: 70px;
 $column-size: 24px;
 
 @function str-replace($string, $search, $replace: '') {
@@ -44,44 +44,49 @@ $column-size: 24px;
   @return url('data:image/svg+xml;utf8,#{str-replace($icon, "#", "%23")}');
 }
 
-@function tetris-l-90($fill, $blocksize:$tetris-block-size, $background:white) {
+@function tetris-l-90($fill, $blocksize:$tetris-block-size, $grid-dimensions:3, $background:white) {
   $numbers: (0, 0) (1, 0) (2, 0) (0,1);
-  @return tetris-piece($fill, $numbers, $blocksize, $background);
+  @return tetris-piece($fill, $numbers, $blocksize, $grid-dimensions, $background);
 }
 
-@function tetris-t-90($fill, $blocksize:$tetris-block-size, $background:white) {
-  $numbers: (0, 0) (0, 1) (0, 2) (1,1);
-  @return tetris-piece($fill, $numbers, $blocksize, $background);
+@function tetris-t-90($fill, $blocksize:$tetris-block-size, $grid-dimensions:3, $background:white) {
+  $numbers: (0, 1) (0, 2) (0, 3) (1,2);
+  @return tetris-piece($fill, $numbers, $blocksize, $grid-dimensions, $background);
 }
 
-@function tetris-reverse-l($fill, $blocksize:$tetris-block-size, $background:white) {
+@function tetris-z-90($fill, $blocksize:$tetris-block-size, $grid-dimensions:4, $background:white) {
+  $numbers: (0, 1) (0, 2) (1, 0) (1, 1);
+  @return tetris-piece($fill, $numbers, $blocksize, $grid-dimensions, $background);
+}
+
+@function tetris-reverse-l($fill, $blocksize:$tetris-block-size, $grid-dimensions:3, $background:white) {
   $numbers: (2, 0) (2, 1) (2, 2) (1,2);
-  @return tetris-piece($fill, $numbers, $blocksize, $background);
+  @return tetris-piece($fill, $numbers, $blocksize, $grid-dimensions, $background);
 }
 
-@function tetris-bar($fill, $blocksize:$tetris-block-size, $background:white) {
+@function tetris-bar($fill, $blocksize:$tetris-block-size, $grid-dimensions:4, $background:white) {
   $numbers: (0, 0) (0, 1) (0, 2) (0,3);
-  @return tetris-piece($fill, $numbers, $blocksize, $background);
+  @return tetris-piece($fill, $numbers, $blocksize, $grid-dimensions, $background);
 }
 
-@function tetris-z($fill, $blocksize:$tetris-block-size, $background:white) {
+@function tetris-z($fill, $blocksize:$tetris-block-size, $grid-dimensions:4, $background:white) {
   $numbers: (0, 2) (1, 2) (1, 3) (2,3);
-  @return tetris-piece($fill, $numbers, $blocksize, $background);
+  @return tetris-piece($fill, $numbers, $blocksize, $grid-dimensions, $background);
 }
 
-@function tetris-l($fill, $blocksize:$tetris-block-size, $background:white) {
+@function tetris-l($fill, $blocksize:$tetris-block-size, $grid-dimensions:4, $background:white) {
   $numbers: (0, 1) (0, 2) (0, 3) (1,3);
-  @return tetris-piece($fill, $numbers, $blocksize, $background);
+  @return tetris-piece($fill, $numbers, $blocksize, $grid-dimensions, $background);
 }
 
-@function tetris-square($fill, $blocksize:$tetris-block-size, $background:white) {
+@function tetris-square($fill, $blocksize:$tetris-block-size, $grid-dimensions:4, $background:white) {
   $numbers: (0, 2) (0, 3) (1, 2) (1,3);
-  @return tetris-piece($fill, $numbers, $blocksize, $background);
+  @return tetris-piece($fill, $numbers, $blocksize, $grid-dimensions, $background);
 }
 
-@function tetris-t($fill, $blocksize:$tetris-block-size, $background:white) {
+@function tetris-t($fill, $blocksize:$tetris-block-size, $grid-dimensions:4, $background:white) {
   $numbers: (0, 2) (1, 2) (2, 2) (1,3);
-  @return tetris-piece($fill, $numbers, $blocksize, $background);
+  @return tetris-piece($fill, $numbers, $blocksize, $grid-dimensions, $background);
 }
 
 /****************************************
@@ -107,7 +112,7 @@ $column-size: 24px;
   $blocksize - The size, which defaults to the variable $tetris-block-size
   $background - The background color of the page, for the "transparent" sections
 *****************************************/
-@function tetris-piece($fill, $blocks, $blocksize:$tetris-block-size, $background:white) {
+@function tetris-piece($fill, $blocks, $blocksize:$tetris-block-size, $grid-dimensions:0, $background:white) {
   $spacing: $blocksize * 0.1; 
   $svg: '';
   $max-width: 0;
@@ -121,7 +126,7 @@ $column-size: 24px;
       $max-height: $block-y;
     }
   }
-  $grid-size: $blocksize * (max($max-height, $max-width)+1);
+  $grid-size: $blocksize * max(max($max-height, $max-width)+1, $grid-dimensions);
   $svg-header: '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="#{$grid-size}" height="#{$grid-size}" viewBox="0 0 #{$grid-size} #{$grid-size}">';
   @return url-svg($svg-header + $svg + '</svg>');
   /*@return url-svg($svg-header 
@@ -189,6 +194,7 @@ $column-size: 24px;
     @include font-press-start($fontsize-subheading, $color);
     margin-top:0;
     margin-bottom:1em;
+    line-height:$fontsize-subheading*1.5;
   }
   padding-left:$padding-left;
   padding-right:$padding-right;
