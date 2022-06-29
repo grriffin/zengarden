@@ -15,29 +15,39 @@ body {
   @include font-source($fontsize-body, $body-color);
 }
 
+/* Main title "CSS ZEN GARDEN" */
 h1 {
   @include font-odibee($fontsize-body, $purple);
-  padding-top:2.7em;
-  margin-right:4.6em;
-  margin-bottom:0;
-  text-align: right;
-}
-
-h2 {
-  @include font-odibee($fontsize-mainheading, black);
-  margin-top:0;
-  margin-left:50px;
-  margin-right:50px;
-  margin-bottom: 0;
   text-align: center;
 }
+
+/* Subtitle */
+h2 {
+  @include font-odibee($fontsize-mainheading, black);
+  text-align: center;
+}
+
+/** Intro Paragraph **/
+.summary {
+
+  p:first-of-type {
+    margin: 0 $tetris-block-size*2+30px 1rem $column-size;
+  }
+
+  p:last-of-type {
+    width:100%;
+    text-align: center;
+  }
+
+}
+
+
 
 h4 {
   @include font-source($fontsize-sidebarheading, black);
 }
 
 a {
-  //@include uppercase($orange);
   text-decoration: none;
   &:hover {
     color: darken($orange, 10%);
@@ -57,8 +67,7 @@ p {
 .page-wrapper {
   width: 100%;
 
-
-  @include for-desktop-up {    
+  @include for-desktop-up {
     max-width: 1024px;
     margin-left:auto;
     margin-right:auto;

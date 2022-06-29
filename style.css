@@ -16,26 +16,30 @@ body {
   color: #2D2D2D;
 }
 
+/* Main title "CSS ZEN GARDEN" */
 h1 {
   font-family: "Odibee Sans", "Source Sans Pro", Arial, sans-serif;
   text-transform: uppercase;
   font-size: 12pt;
   color: #AB1DA4;
-  padding-top: 2.7em;
-  margin-right: 4.6em;
-  margin-bottom: 0;
-  text-align: right;
+  text-align: center;
 }
 
+/* Subtitle */
 h2 {
   font-family: "Odibee Sans", "Source Sans Pro", Arial, sans-serif;
   text-transform: uppercase;
   font-size: 32pt;
   color: black;
-  margin-top: 0;
-  margin-left: 50px;
-  margin-right: 50px;
-  margin-bottom: 0;
+  text-align: center;
+}
+
+/** Intro Paragraph **/
+.summary p:first-of-type {
+  margin: 0 150px 1rem 24px;
+}
+.summary p:last-of-type {
+  width: 100%;
   text-align: center;
 }
 
@@ -72,27 +76,34 @@ p {
   }
 }
 
+/* Header */
 header[role=banner] {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-image: url("/assets/l-40.svg"), url("/assets/reverse-l-40.svg");
+  background-image: url('data:image/svg+xml;utf8,<svg  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="180" height="180" viewBox="0 0 180 180"><rect x="0" y="0" height="60" width="60" stroke="white" stroke-width="6" fill="%2300ACE5"/><rect x="60" y="0" height="60" width="60" stroke="white" stroke-width="6" fill="%2300ACE5"/><rect x="120" y="0" height="60" width="60" stroke="white" stroke-width="6" fill="%2300ACE5"/><rect x="0" y="60" height="60" width="60" stroke="white" stroke-width="6" fill="%2300ACE5"/></svg>'), url("/assets/reverse-l-40.svg");
   background-position: left top, right bottom;
   background-repeat: no-repeat, no-repeat;
-  background-size: 180px 120px, 120px 180px;
+  background-size: 180px 180px, 120px 180px;
   height: 14rem;
   margin-left: 1rem;
   margin-right: 1rem;
 }
+header[role=banner] h1 {
+  padding-top: 60px;
+  margin-bottom: 0;
+}
+header[role=banner] h2 {
+  margin-top: 0;
+  margin-left: 60px;
+  margin-right: 60px;
+  margin-bottom: 0;
+}
 
+/** Summary section **/
 .summary {
   margin-top: -60px;
-  margin-right: 130px;
   margin-left: 1rem;
-}
-.summary p {
-  margin-top: 0;
-  padding-top: 0;
 }
 
 .preamble {

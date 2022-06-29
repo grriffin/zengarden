@@ -1,28 +1,36 @@
 @use 'variables' as *;
 
+/* Header */
 header[role='banner'] {
   //display:flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-image: url('/assets/l-40.svg'),url('/assets/reverse-l-40.svg');
+  background-image: tetris-l($lightblue, $tetris-block-size),url('/assets/reverse-l-40.svg');
   background-position: left top, right bottom;
   background-repeat: no-repeat, no-repeat;
-  background-size: $tetris-block-size*3 $tetris-block-size*2, $tetris-block-size*2 $tetris-block-size*3;
+  background-size: $tetris-block-size*3 $tetris-block-size*3, $tetris-block-size*2 $tetris-block-size*3;
   height: 14rem;
   margin-left:1rem;
   margin-right:1rem;
+
+  h1 {
+    padding-top: $tetris-block-size; //3.2rem;
+    margin-bottom:0;
+  }
+
+  h2 {
+    margin-top:0;
+    margin-left:$tetris-block-size;
+    margin-right:$tetris-block-size;
+    margin-bottom: 0;
+  }
 }
 
+/** Summary section **/
 .summary {
   margin-top:-$tetris-block-size;
-  margin-right:$tetris-block-size*2+10px;
   margin-left:1rem;
-
-  p {
-    margin-top:0;
-    padding-top:0;
-  }
 }
 
 .preamble {

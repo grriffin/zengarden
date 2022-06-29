@@ -28,7 +28,82 @@ $body-color: #2D2D2D;
 $body-color-light: white;
 
 $tetris-block-size: 60px;
+$column-size: 24px;
 
+@function str-replace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+  
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+  
+  @return $string;
+}
+
+@function url-svg($icon) {
+  @return url('data:image/svg+xml;utf8,#{str-replace($icon, "#", "%23")}');
+}
+
+@mixin red-filter() {
+  filter: invert(23%) sepia(82%) saturate(6924%) hue-rotate(350deg) brightness(95%) contrast(95%);
+}
+
+@mixin darkblue-filter() {
+  filter: invert(10%) sepia(94%) saturate(1865%) hue-rotate(214deg) brightness(89%) contrast(92%);
+}
+
+@mixin lightblue-filter() {
+  filter: invert(51%) sepia(37%) saturate(5145%) hue-rotate(164deg) brightness(102%) contrast(101%);
+}
+
+@mixin purple-filter() {
+  filter: invert(16%) sepia(66%) saturate(4034%) hue-rotate(290deg) brightness(101%) contrast(95%);
+}
+
+@mixin orange-filter() {
+  filter: invert(77%) sepia(68%) saturate(4794%) hue-rotate(351deg) brightness(102%) contrast(98%);
+}
+
+@mixin yellow-filter() {
+  filter: invert(80%) sepia(83%) saturate(1667%) hue-rotate(336deg) brightness(101%) contrast(101%);
+}
+
+@mixin green-filter() {
+  filter: invert(62%) sepia(14%) saturate(2383%) hue-rotate(65deg) brightness(102%) contrast(81%);
+}
+
+@function tetris-l($fill, $blocksize:$tetris-block-size, $background:white) {
+  $numbers: (0, 0) (1, 0) (2, 0) (0,1);
+  @return tetris-piece($fill, $numbers, 60, $background);
+  //$spacing: $blocksize * 0.1; 
+  //@return url-svg('<svg  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="#{$blocksize*3}" height="#{$blocksize*2}" viewBox="0 0 #{$blocksize*3} #{$blocksize*2}"> <rect x="0" y="0" height="#{$blocksize}" width="#{$blocksize}"  stroke="#{$background}" stroke-width="#{$spacing}" fill="#{$fill}"/> <rect x="#{$blocksize}" y="0" height="#{$blocksize}" width="#{$blocksize}"  stroke="#{$background}" stroke-width="#{$spacing}" fill="#{$fill}"/> <rect x="#{$blocksize*2}" y="0" height="#{$blocksize}" width="#{$blocksize}"  stroke="#{$background}" stroke-width="#{$spacing}" fill="#{$fill}"/> <rect x="0" y="#{$blocksize}" height="#{$blocksize}" width="#{$blocksize}"  stroke="#{$background}" stroke-width="#{$spacing}" fill="#{$fill}"/> </svg>');
+}
+
+@function tetris-reverse-l($fill, $blocksize:$tetris-block-size, $background:white) {
+  $spacing: $blocksize * 0.1; 
+  @return url-svg('<svg  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="#{$blocksize*2}" height="#{$blocksize*3}" viewBox="0 0 80 #{$blocksize*3}"> <rect x="#{$blocksize}" y="0" height="#{$blocksize}" width="#{$blocksize}" stroke="#{$background}" stroke-width="#{spacing}" fill="#{$fill}"/> <rect x="#{$blocksize}" y="#{$blocksize}" height="#{$blocksize}" width="#{$blocksize}" stroke="#{$background}" stroke-width="#{spacing}" fill="#{$fill}"/> <rect x="#{$blocksize}" y="#{$blocksize*2}" height="#{$blocksize}" width="#{$blocksize}" stroke="#{$background}" stroke-width="#{spacing}" fill="#{$fill}"/> <rect x="0" y="#{$blocksize*2}" height="#{$blocksize}" width="#{$blocksize}" stroke="#{$background}" stroke-width="#{spacing}" fill="#{$fill}"/> </svg>');
+}
+
+@function tetris-piece($fill, $blocks, $blocksize:$tetris-block-size, $background:white) {
+  $spacing: $blocksize * 0.1; 
+  $svg: '<svg  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="#{$blocksize*3}" height="#{$blocksize*3}" viewBox="0 0 #{$blocksize*3} #{$blocksize*3}">';
+  @each $block-x, $block-y in $blocks {
+    $svg : $svg + tetris-block($block-x, $block-y, $fill, $blocksize, $background, $spacing);
+  }
+  $svg: $svg + '</svg>';
+  @return url-svg($svg);
+  /*@return url-svg($svg-header 
+    + tetris-block(0, 0, $fill, $blocksize, $background, $spacing)
+    + tetris-block(1, 0, $fill, $blocksize, $background, $spacing)
+    + tetris-block(2, 0, $fill, $blocksize, $background, $spacing)
+    + tetris-block(0, 1, $fill, $blocksize, $background, $spacing)
+    + '</svg>');*/
+  //@return url-svg('<svg  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="#{$blocksize*2}" height="#{$blocksize*3}" viewBox="0 0 80 #{$blocksize*3}"> <rect x="#{$blocksize}" y="0" height="#{$blocksize}" width="#{$blocksize}" stroke="#{$background}" stroke-width="#{spacing}" fill="#{$fill}"/> <rect x="#{$blocksize}" y="#{$blocksize}" height="#{$blocksize}" width="#{$blocksize}" stroke="#{$background}" stroke-width="#{spacing}" fill="#{$fill}"/> <rect x="#{$blocksize}" y="#{$blocksize*2}" height="#{$blocksize}" width="#{$blocksize}" stroke="#{$background}" stroke-width="#{spacing}" fill="#{$fill}"/> <rect x="0" y="#{$blocksize*2}" height="#{$blocksize}" width="#{$blocksize}" stroke="#{$background}" stroke-width="#{spacing}" fill="#{$fill}"/> </svg>');
+}
+
+@function tetris-block($pos-x, $pos-y, $fill, $blocksize, $background, $spacing) {
+  @return '<rect x="#{$pos-x*$blocksize}" y="#{$pos-y*$blocksize}" height="#{$blocksize}" width="#{$blocksize}" stroke="#{$background}" stroke-width="#{$spacing}" fill="#{$fill}"/>';
+}
 
 @mixin font-odibee($size: false, $color: false, $weight: false, $lh: false) {
     font-family: $fontfamily-odibee;
@@ -86,3 +161,5 @@ $tetris-block-size: 60px;
   padding-left:$padding-left;
   padding-right:$padding-right;
 }
+
+
