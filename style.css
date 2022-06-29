@@ -177,7 +177,7 @@ header[role=banner] h2 {
   margin-left: 70px;
   margin-right: 70px;
   margin-bottom: 0;
-  animation: colorchange 5s infinite alternate;
+  animation: colorchange 10s infinite alternate;
 }
 
 /** Summary section **/
