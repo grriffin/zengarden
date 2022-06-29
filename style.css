@@ -186,6 +186,27 @@ aside.sidebar a:active {
   color: #48C233;
 }
 
+@keyframes colorchange {
+  0% {
+    color: #15295B;
+  }
+  20% {
+    color: #00ACE5;
+  }
+  40% {
+    color: #48C233;
+  }
+  60% {
+    color: #FD8C13;
+  }
+  80% {
+    color: #ED1A25;
+  }
+  100% {
+    color: #AB1DA4;
+  }
+}
+/* Header */
 header[role=banner] {
   align-items: center;
   justify-content: center;
@@ -234,7 +255,7 @@ header[role=banner] h2 {
   margin-bottom: 1em;
   line-height: 24pt;
 }
-@media (min-width: 900px) {
+@media (min-width: 600px) {
   .preamble {
     background-image: none;
   }
