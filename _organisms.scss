@@ -1,0 +1,13 @@
+@use 'variables' as *;
+
+.intro {
+  .summary {
+    p:nth-child(2) {
+      font-size: 12pt;
+
+      @include for-tablet-portrait-up {
+        font-size: 14pt;
+      }
+    }
+  }
+}

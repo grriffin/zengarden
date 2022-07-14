@@ -35,7 +35,7 @@ html {
 body {
   margin: 0;
   font-family: "Source Sans Pro", sans-serif;
-  font-size: 16pt;
+  font-size: 14pt;
   color: #2D2D2D;
 }
 
@@ -43,7 +43,7 @@ body {
 h1 {
   font-family: "Odibee Sans", "Source Sans Pro", Arial, sans-serif;
   text-transform: uppercase;
-  font-size: 16pt;
+  font-size: 14pt;
   color: #AB1DA4;
   text-align: center;
 }
@@ -59,7 +59,7 @@ h2 {
 
 /** Intro Paragraph **/
 .summary p:first-of-type {
-  margin: 0 170px 1rem 24px;
+  margin: 0 120px 1rem 24px;
 }
 .summary p:last-of-type {
   width: 100%;
@@ -95,31 +95,31 @@ footer a {
   justify-content: center;
   background-position: left center;
   background-repeat: no-repeat;
-  margin: 1rem;
+  margin: 0.2rem;
   text-align: center;
 }
 footer a:nth-child(1) {
-  padding-left: 1rem;
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="4rem" height="4rem" viewBox="0 0 4rem 4rem"><rect x="0rem" y="0rem" height="1rem" width="1rem" stroke="white" stroke-width="0.1rem" fill="%2300ACE5"/><rect x="0rem" y="1rem" height="1rem" width="1rem" stroke="white" stroke-width="0.1rem" fill="%2300ACE5"/><rect x="0rem" y="2rem" height="1rem" width="1rem" stroke="white" stroke-width="0.1rem" fill="%2300ACE5"/><rect x="0rem" y="3rem" height="1rem" width="1rem" stroke="white" stroke-width="0.1rem" fill="%2300ACE5"/></svg>');
+  padding-left: 0.75rem;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="2rem" height="2rem" viewBox="0 0 2rem 2rem"><rect x="0rem" y="0rem" height="0.5rem" width="0.5rem" stroke="white" stroke-width="0.05rem" fill="%2300ACE5"/><rect x="0rem" y="0.5rem" height="0.5rem" width="0.5rem" stroke="white" stroke-width="0.05rem" fill="%2300ACE5"/><rect x="0rem" y="1rem" height="0.5rem" width="0.5rem" stroke="white" stroke-width="0.05rem" fill="%2300ACE5"/><rect x="0rem" y="1.5rem" height="0.5rem" width="0.5rem" stroke="white" stroke-width="0.05rem" fill="%2300ACE5"/></svg>');
   background-size: 3rem 3rem;
 }
 footer a:nth-child(2) {
-  padding-left: 2.6rem;
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="4rem" height="4rem" viewBox="0 0 4rem 4rem"><rect x="0rem" y="2rem" height="1rem" width="1rem" stroke="white" stroke-width="0.1rem" fill="%2348C233"/><rect x="1rem" y="2rem" height="1rem" width="1rem" stroke="white" stroke-width="0.1rem" fill="%2348C233"/><rect x="1rem" y="3rem" height="1rem" width="1rem" stroke="white" stroke-width="0.1rem" fill="%2348C233"/><rect x="2rem" y="3rem" height="1rem" width="1rem" stroke="white" stroke-width="0.1rem" fill="%2348C233"/></svg>');
+  padding-left: 2.5rem;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="2rem" height="2rem" viewBox="0 0 2rem 2rem"><rect x="0rem" y="1rem" height="0.5rem" width="0.5rem" stroke="white" stroke-width="0.05rem" fill="%2348C233"/><rect x="0.5rem" y="1rem" height="0.5rem" width="0.5rem" stroke="white" stroke-width="0.05rem" fill="%2348C233"/><rect x="0.5rem" y="1.5rem" height="0.5rem" width="0.5rem" stroke="white" stroke-width="0.05rem" fill="%2348C233"/><rect x="1rem" y="1.5rem" height="0.5rem" width="0.5rem" stroke="white" stroke-width="0.05rem" fill="%2348C233"/></svg>');
   background-size: 3rem 3rem;
 }
 footer a:nth-child(3) {
-  padding-left: 2rem;
+  padding-left: 1.6rem;
   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="4rem" height="4rem" viewBox="0 0 4rem 4rem"><rect x="0rem" y="1rem" height="1rem" width="1rem" stroke="white" stroke-width="0.1rem" fill="%23FD8C13"/><rect x="0rem" y="2rem" height="1rem" width="1rem" stroke="white" stroke-width="0.1rem" fill="%23FD8C13"/><rect x="0rem" y="3rem" height="1rem" width="1rem" stroke="white" stroke-width="0.1rem" fill="%23FD8C13"/><rect x="1rem" y="3rem" height="1rem" width="1rem" stroke="white" stroke-width="0.1rem" fill="%23FD8C13"/></svg>');
   background-size: 3rem 3rem;
 }
 footer a:nth-child(4) {
-  padding-left: 2rem;
+  padding-left: 1.8rem;
   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="4rem" height="4rem" viewBox="0 0 4rem 4rem"><rect x="0rem" y="2rem" height="1rem" width="1rem" stroke="white" stroke-width="0.1rem" fill="%23ED1A25"/><rect x="0rem" y="3rem" height="1rem" width="1rem" stroke="white" stroke-width="0.1rem" fill="%23ED1A25"/><rect x="1rem" y="2rem" height="1rem" width="1rem" stroke="white" stroke-width="0.1rem" fill="%23ED1A25"/><rect x="1rem" y="3rem" height="1rem" width="1rem" stroke="white" stroke-width="0.1rem" fill="%23ED1A25"/></svg>');
   background-size: 3rem 3rem;
 }
 footer a:nth-child(5) {
-  padding-left: 2.6rem;
+  padding-left: 2.4rem;
   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="4rem" height="4rem" viewBox="0 0 4rem 4rem"><rect x="0rem" y="2rem" height="1rem" width="1rem" stroke="white" stroke-width="0.1rem" fill="%23AB1DA4"/><rect x="1rem" y="2rem" height="1rem" width="1rem" stroke="white" stroke-width="0.1rem" fill="%23AB1DA4"/><rect x="2rem" y="2rem" height="1rem" width="1rem" stroke="white" stroke-width="0.1rem" fill="%23AB1DA4"/><rect x="1rem" y="3rem" height="1rem" width="1rem" stroke="white" stroke-width="0.1rem" fill="%23AB1DA4"/></svg>');
   background-size: 3rem 3rem;
 }
@@ -211,29 +211,29 @@ header[role=banner] {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="210px" height="210px" viewBox="0 0 210px 210px"><rect x="0px" y="0px" height="70px" width="70px" stroke="white" stroke-width="7px" fill="%2300ACE5"/><rect x="70px" y="0px" height="70px" width="70px" stroke="white" stroke-width="7px" fill="%2300ACE5"/><rect x="140px" y="0px" height="70px" width="70px" stroke="white" stroke-width="7px" fill="%2300ACE5"/><rect x="0px" y="70px" height="70px" width="70px" stroke="white" stroke-width="7px" fill="%2300ACE5"/></svg>'), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="210px" height="210px" viewBox="0 0 210px 210px"><rect x="140px" y="0px" height="70px" width="70px" stroke="white" stroke-width="7px" fill="%2348C233"/><rect x="140px" y="70px" height="70px" width="70px" stroke="white" stroke-width="7px" fill="%2348C233"/><rect x="140px" y="140px" height="70px" width="70px" stroke="white" stroke-width="7px" fill="%2348C233"/><rect x="70px" y="140px" height="70px" width="70px" stroke="white" stroke-width="7px" fill="%2348C233"/></svg>');
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="135px" height="135px" viewBox="0 0 135px 135px"><rect x="0px" y="0px" height="45px" width="45px" stroke="white" stroke-width="4.5px" fill="%2300ACE5"/><rect x="45px" y="0px" height="45px" width="45px" stroke="white" stroke-width="4.5px" fill="%2300ACE5"/><rect x="90px" y="0px" height="45px" width="45px" stroke="white" stroke-width="4.5px" fill="%2300ACE5"/><rect x="0px" y="45px" height="45px" width="45px" stroke="white" stroke-width="4.5px" fill="%2300ACE5"/></svg>'), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="135px" height="135px" viewBox="0 0 135px 135px"><rect x="90px" y="0px" height="45px" width="45px" stroke="white" stroke-width="4.5px" fill="%2348C233"/><rect x="90px" y="45px" height="45px" width="45px" stroke="white" stroke-width="4.5px" fill="%2348C233"/><rect x="90px" y="90px" height="45px" width="45px" stroke="white" stroke-width="4.5px" fill="%2348C233"/><rect x="45px" y="90px" height="45px" width="45px" stroke="white" stroke-width="4.5px" fill="%2348C233"/></svg>');
   background-position: left top, right bottom;
   background-repeat: no-repeat, no-repeat;
-  background-size: 210px, 210px;
-  height: 20rem;
+  background-size: 135px, 135px;
+  height: 15rem;
   margin-left: 1rem;
   margin-right: 1rem;
 }
 header[role=banner] h1 {
-  padding-top: 105px;
+  padding-top: 67.5px;
   margin-bottom: 0;
 }
 header[role=banner] h2 {
   margin-top: 0;
-  margin-left: 70px;
-  margin-right: 70px;
+  margin-left: 45px;
+  margin-right: 45px;
   margin-bottom: 0;
   animation: colorchange 10s infinite alternate;
 }
 
 /** Summary section **/
 .summary {
-  margin-top: -70px;
+  margin-top: -45px;
   margin-left: 1rem;
 }
 
@@ -241,11 +241,11 @@ header[role=banner] h2 {
   padding-left: 1rem;
   padding-right: 1rem;
   margin: 1rem 0 1rem 1rem;
-  padding: 1rem 1rem 1rem 175px;
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="280px" height="280px" viewBox="0 0 280px 280px"><rect x="0px" y="70px" height="70px" width="70px" stroke="white" stroke-width="7px" fill="%23FD8C13"/><rect x="0px" y="140px" height="70px" width="70px" stroke="white" stroke-width="7px" fill="%23FD8C13"/><rect x="0px" y="210px" height="70px" width="70px" stroke="white" stroke-width="7px" fill="%23FD8C13"/><rect x="70px" y="140px" height="70px" width="70px" stroke="white" stroke-width="7px" fill="%23FD8C13"/></svg>'), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="280px" height="280px" viewBox="0 0 280px 280px"><rect x="0px" y="70px" height="70px" width="70px" stroke="white" stroke-width="7px" fill="%23AB1DA4"/><rect x="0px" y="140px" height="70px" width="70px" stroke="white" stroke-width="7px" fill="%23AB1DA4"/><rect x="70px" y="0px" height="70px" width="70px" stroke="white" stroke-width="7px" fill="%23AB1DA4"/><rect x="70px" y="70px" height="70px" width="70px" stroke="white" stroke-width="7px" fill="%23AB1DA4"/></svg>');
+  padding: 1rem 1rem 1rem 112.5px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="180px" height="180px" viewBox="0 0 180px 180px"><rect x="0px" y="45px" height="45px" width="45px" stroke="white" stroke-width="4.5px" fill="%23FD8C13"/><rect x="0px" y="90px" height="45px" width="45px" stroke="white" stroke-width="4.5px" fill="%23FD8C13"/><rect x="0px" y="135px" height="45px" width="45px" stroke="white" stroke-width="4.5px" fill="%23FD8C13"/><rect x="45px" y="90px" height="45px" width="45px" stroke="white" stroke-width="4.5px" fill="%23FD8C13"/></svg>'), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="180px" height="180px" viewBox="0 0 180px 180px"><rect x="0px" y="45px" height="45px" width="45px" stroke="white" stroke-width="4.5px" fill="%23AB1DA4"/><rect x="0px" y="90px" height="45px" width="45px" stroke="white" stroke-width="4.5px" fill="%23AB1DA4"/><rect x="45px" y="0px" height="45px" width="45px" stroke="white" stroke-width="4.5px" fill="%23AB1DA4"/><rect x="45px" y="45px" height="45px" width="45px" stroke="white" stroke-width="4.5px" fill="%23AB1DA4"/></svg>');
   background-position: left top, left bottom;
   background-repeat: no-repeat, no-repeat;
-  background-size: 280px, 280px;
+  background-size: 180px, 180px;
 }
 .preamble h3 {
   font-family: "Press Start 2P", Arial, Verdana, sans-serif;
@@ -253,6 +253,7 @@ header[role=banner] h2 {
   color: #AB1DA4;
   margin-top: 0;
   margin-bottom: 1em;
+  overflow-wrap: break-word;
   line-height: 24pt;
 }
 @media (min-width: 600px) {
@@ -273,6 +274,7 @@ header[role=banner] h2 {
   color: #48C233;
   margin-top: 0;
   margin-bottom: 1em;
+  overflow-wrap: break-word;
   line-height: 24pt;
 }
 
@@ -288,11 +290,12 @@ header[role=banner] h2 {
   color: #FD8C13;
   margin-top: 0;
   margin-bottom: 1em;
+  overflow-wrap: break-word;
   line-height: 24pt;
 }
 .participation p {
   font-family: "Source Sans Pro", sans-serif;
-  font-size: 16pt;
+  font-size: 14pt;
   color: white;
 }
 
@@ -308,11 +311,12 @@ header[role=banner] h2 {
   color: #FFCC22;
   margin-top: 0;
   margin-bottom: 1em;
+  overflow-wrap: break-word;
   line-height: 24pt;
 }
 .benefits p {
   font-family: "Source Sans Pro", sans-serif;
-  font-size: 16pt;
+  font-size: 14pt;
   color: white;
 }
 
@@ -327,6 +331,7 @@ header[role=banner] h2 {
   color: #15295B;
   margin-top: 0;
   margin-bottom: 1em;
+  overflow-wrap: break-word;
   line-height: 24pt;
 }
 
@@ -377,6 +382,15 @@ footer {
 }
 .design-selection a:active {
   color: #48C233;
+}
+
+.intro .summary p:nth-child(2) {
+  font-size: 12pt;
+}
+@media (min-width: 600px) {
+  .intro .summary p:nth-child(2) {
+    font-size: 14pt;
+  }
 }
 
 * {

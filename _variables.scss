@@ -13,7 +13,7 @@ $fontsize-sidebarheading: 24pt;
 $fontsize-sidebarsubheading-allcaps: 15pt;
 $fontsize-sidebarsubheading: 14pt;
 $fontsize-sidebar-author: 11pt;
-$fontsize-body: 16pt;
+$fontsize-body: 14pt;
 $fontsize-large: 16pt;
 
 $red: #ED1A25;
@@ -27,7 +27,8 @@ $green: #48C233;
 $body-color: #2D2D2D;
 $body-color-light: white;
 
-$tetris-block-size: 70px;
+
+$tetris-block-size: 45px;
 $column-size: 24px;
 
 @function str-replace($string, $search, $replace: '') {
@@ -194,6 +195,7 @@ $column-size: 24px;
     @include font-press-start($fontsize-subheading, $color);
     margin-top:0;
     margin-bottom:1em;
+    overflow-wrap: break-word;
     line-height:$fontsize-subheading*1.5;
   }
   padding-left:$padding-left;
