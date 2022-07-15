@@ -11,7 +11,7 @@ html {
 }
 
 body {
-  margin:0;
+  margin: 0;
   @include font-source($fontsize-body, $body-color);
 }
 
@@ -29,19 +29,28 @@ h2 {
 
 /** Intro Paragraph **/
 .summary {
-
   p:first-of-type {
-    margin: 0 $tetris-block-size*2+30px 1rem $column-size;
+    margin-top: 0;
+    margin-right: $tetris-block-size * 2+2rem;
+    margin-bottom: 1rem;
+    margin-left: $column-size;
+
+    @include for-tablet-portrait-up() {
+      margin-right: $tetris-block-size-m * 2 + 2rem;
+    }
+    @include for-tablet-landscape-up() {
+      margin-right: $tetris-block-size-l * 2 + 2rem;
+    }
+    @include for-desktop-up() {
+      margin: 0 $tetris-block-size-xl * 2 + 2rem;
+    }
   }
 
   p:last-of-type {
-    width:100%;
+    width: 100%;
     text-align: center;
   }
-
 }
-
-
 
 h4 {
   @include font-source($fontsize-sidebarheading, black);
@@ -60,61 +69,58 @@ a {
 }
 
 p {
-  margin:0;
-  padding-top:.5em;
+  margin: 0;
+  padding-top: 0.5em;
 }
 
 footer {
   a {
-    height:3rem;
-    display:flex;
-    align-items:flex-end;
+    height: 3rem;
+    display: flex;
+    align-items: flex-end;
     justify-content: center;
     background-position: left center;
     background-repeat: no-repeat;
     //width: 6rem;
-    margin:.2rem;
+    margin: 0.2rem;
     text-align: center;
   }
 
-  a:nth-child(1){
-    padding-left: .75rem;
-    background-image: tetris-bar($lightblue, .5rem);
+  a:nth-child(1) {
+    padding-left: 0.75rem;
+    background-image: tetris-bar($lightblue, 0.5rem);
     background-size: 3rem 3rem;
   }
 
-  a:nth-child(2){
+  a:nth-child(2) {
     padding-left: 2.5rem;
-    background-image: tetris-z($green, .5rem);
+    background-image: tetris-z($green, 0.5rem);
     background-size: 3rem 3rem;
   }
 
-  a:nth-child(3){
+  a:nth-child(3) {
     padding-left: 1.6rem;
     background-image: tetris-l($orange, 1rem);
     background-size: 3rem 3rem;
   }
-  a:nth-child(4){
+  a:nth-child(4) {
     padding-left: 1.8rem;
     background-image: tetris-square($red, 1rem);
     background-size: 3rem 3rem;
-  }    
+  }
 
-  a:nth-child(5){
+  a:nth-child(5) {
     padding-left: 2.4rem;
     background-image: tetris-t($purple, 1rem);
     background-size: 3rem 3rem;
-  } 
+  }
 }
 
 .page-wrapper {
   width: 100%;
-
-  @include for-desktop-up {
-    max-width: 1024px;
-    margin-left:auto;
-    margin-right:auto;
-  }
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 //Sidebar Atoms
@@ -128,7 +134,9 @@ aside.sidebar {
     }
   }
   //Archives Nav and Titles
-  .design-name, .next, .viewall {
+  .design-name,
+  .next,
+  .viewall {
     @include font-source($fontsize-sidebarsubheading-allcaps, $all-caps: true);
     font-style: normal;
     &:hover {
@@ -136,7 +144,7 @@ aside.sidebar {
     }
   }
   .design-name::after {
-    content: "\a";
+    content: '\a';
     white-space: pre;
   }
   //Authors

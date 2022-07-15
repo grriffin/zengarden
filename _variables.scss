@@ -2,11 +2,11 @@
 
 //font-families
 $fontfamily-odibee: 'Odibee Sans', 'Source Sans Pro', Arial, sans-serif;
-$fontfamily-press-start:'Press Start 2P', Arial, Verdana, sans-serif;
+$fontfamily-press-start: 'Press Start 2P', Arial, Verdana, sans-serif;
 $fontfamily-source: 'Source Sans Pro', sans-serif;
 
 $fontsize-mainheading: 32pt;
-$fontsize-mainheading-large:96pt;
+$fontsize-mainheading-large: 96pt;
 $fontsize-subheading: 16pt;
 $fontsize-subheading-large: 24pt;
 $fontsize-sidebarheading: 24pt;
@@ -16,28 +16,36 @@ $fontsize-sidebar-author: 11pt;
 $fontsize-body: 14pt;
 $fontsize-large: 16pt;
 
-$red: #ED1A25;
-$darkblue: #15295B;
-$lightblue: #00ACE5;
-$purple: #AB1DA4;
-$orange: #FD8C13;
-$yellow: #FFCC22;
-$green: #48C233;
+$red: #ed1a25;
+$darkblue: #15295b;
+$lightblue: #00ace5;
+$purple: #ab1da4;
+$orange: #fd8c13;
+$yellow: #ffcc22;
+$green: #48c233;
 
-$body-color: #2D2D2D;
+$body-color: #2d2d2d;
 $body-color-light: white;
 
+$tetris-block-size: 3rem;
+$tetris-block-size-m: 4rem;
+$tetris-block-size-l: 6rem;
+$tetris-block-size-xl: 8rem;
 
-$tetris-block-size: 45px;
 $column-size: 24px;
 
 @function str-replace($string, $search, $replace: '') {
   $index: str-index($string, $search);
-  
+
   @if $index {
-    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+    @return str-slice($string, 1, $index - 1) + $replace +
+      str-replace(
+        str-slice($string, $index + str-length($search)),
+        $search,
+        $replace
+      );
   }
-  
+
   @return $string;
 }
 
@@ -45,49 +53,173 @@ $column-size: 24px;
   @return url('data:image/svg+xml;utf8,#{str-replace($icon, "#", "%23")}');
 }
 
-@function tetris-l-90($fill, $blocksize:$tetris-block-size, $grid-dimensions:3, $background:white) {
-  $numbers: (0, 0) (1, 0) (2, 0) (0,1);
-  @return tetris-piece($fill, $numbers, $blocksize, $grid-dimensions, $background);
+@function tetris-l-90(
+  $fill,
+  $blocksize: null,
+  $grid-dimensions: 3,
+  $background: white
+) {
+  $numbers: (0, 0) (1, 0) (2, 0) (0, 1);
+  @return tetris-piece(
+    $fill,
+    $numbers,
+    $blocksize,
+    $grid-dimensions,
+    $background
+  );
 }
 
-@function tetris-t-90($fill, $blocksize:$tetris-block-size, $grid-dimensions:3, $background:white) {
-  $numbers: (0, 1) (0, 2) (0, 3) (1,2);
-  @return tetris-piece($fill, $numbers, $blocksize, $grid-dimensions, $background);
+@function tetris-t-90(
+  $fill,
+  $blocksize: null,
+  $offset-x: 0,
+  $offset-y: 0,
+  $grid-dimensions: 3,
+  $background: white
+) {
+  $numbers: ($offset-x + 0, $offset-y + 0) ($offset-x + 0, $offset-y + 1)
+    ($offset-x + 0, $offset-y + 2) ($offset-x + 1, $offset-y + 1);
+  @return tetris-piece(
+    $fill,
+    $numbers,
+    $blocksize,
+    $grid-dimensions,
+    $background
+  );
 }
 
-@function tetris-z-90($fill, $blocksize:$tetris-block-size, $grid-dimensions:4, $background:white) {
-  $numbers: (0, 1) (0, 2) (1, 0) (1, 1);
-  @return tetris-piece($fill, $numbers, $blocksize, $grid-dimensions, $background);
+@function tetris-z-90(
+  $fill,
+  $blocksize: null,
+  $offset-x: 0,
+  $offset-y: 0,
+  $grid-dimensions: 4,
+  $background: white
+) {
+  $numbers: ($offset-x + 0, $offset-y + 1) ($offset-x + 0, $offset-y + 2)
+    ($offset-x + 1, $offset-y + 0) ($offset-x + 1, $offset-y + 1);
+  @return tetris-piece(
+    $fill,
+    $numbers,
+    $blocksize,
+    $grid-dimensions,
+    $background
+  );
 }
 
-@function tetris-reverse-l($fill, $blocksize:$tetris-block-size, $grid-dimensions:3, $background:white) {
-  $numbers: (2, 0) (2, 1) (2, 2) (1,2);
-  @return tetris-piece($fill, $numbers, $blocksize, $grid-dimensions, $background);
+@function tetris-reverse-l(
+  $fill,
+  $blocksize: null,
+  $grid-dimensions: 3,
+  $background: white
+) {
+  $numbers: (2, 0) (2, 1) (2, 2) (1, 2);
+  @return tetris-piece(
+    $fill,
+    $numbers,
+    $blocksize,
+    $grid-dimensions,
+    $background
+  );
 }
 
-@function tetris-bar($fill, $blocksize:$tetris-block-size, $grid-dimensions:4, $background:white) {
-  $numbers: (0, 0) (0, 1) (0, 2) (0,3);
-  @return tetris-piece($fill, $numbers, $blocksize, $grid-dimensions, $background);
+@function tetris-reverse-l-270(
+  $fill,
+  $blocksize: null,
+  $offset-x: 0,
+  $offset-y: 0,
+  $grid-dimensions: 3,
+  $background: white
+) {
+  $numbers: ($offset-x + 0, $offset-y + 0) ($offset-x + 1, $offset-y + 0)
+    ($offset-x + 2, $offset-y + 0) ($offset-x + 2, $offset-y + 1);
+  @return tetris-piece(
+    $fill,
+    $numbers,
+    $blocksize,
+    $grid-dimensions,
+    $background
+  );
 }
 
-@function tetris-z($fill, $blocksize:$tetris-block-size, $grid-dimensions:4, $background:white) {
-  $numbers: (0, 2) (1, 2) (1, 3) (2,3);
-  @return tetris-piece($fill, $numbers, $blocksize, $grid-dimensions, $background);
+@function tetris-bar(
+  $fill,
+  $blocksize: null,
+  $grid-dimensions: 4,
+  $background: white
+) {
+  $numbers: (0, 0) (0, 1) (0, 2) (0, 3);
+  @return tetris-piece(
+    $fill,
+    $numbers,
+    $blocksize,
+    $grid-dimensions,
+    $background
+  );
 }
 
-@function tetris-l($fill, $blocksize:$tetris-block-size, $grid-dimensions:4, $background:white) {
-  $numbers: (0, 1) (0, 2) (0, 3) (1,3);
-  @return tetris-piece($fill, $numbers, $blocksize, $grid-dimensions, $background);
+@function tetris-z(
+  $fill,
+  $blocksize: null,
+  $grid-dimensions: 4,
+  $background: white
+) {
+  $numbers: (0, 2) (1, 2) (1, 3) (2, 3);
+  @return tetris-piece(
+    $fill,
+    $numbers,
+    $blocksize,
+    $grid-dimensions,
+    $background
+  );
 }
 
-@function tetris-square($fill, $blocksize:$tetris-block-size, $grid-dimensions:4, $background:white) {
-  $numbers: (0, 2) (0, 3) (1, 2) (1,3);
-  @return tetris-piece($fill, $numbers, $blocksize, $grid-dimensions, $background);
+@function tetris-l(
+  $fill,
+  $blocksize: null,
+  $grid-dimensions: 4,
+  $background: white
+) {
+  $numbers: (0, 1) (0, 2) (0, 3) (1, 3);
+  @return tetris-piece(
+    $fill,
+    $numbers,
+    $blocksize,
+    $grid-dimensions,
+    $background
+  );
 }
 
-@function tetris-t($fill, $blocksize:$tetris-block-size, $grid-dimensions:4, $background:white) {
-  $numbers: (0, 2) (1, 2) (2, 2) (1,3);
-  @return tetris-piece($fill, $numbers, $blocksize, $grid-dimensions, $background);
+@function tetris-square(
+  $fill,
+  $blocksize: null,
+  $grid-dimensions: 4,
+  $background: white
+) {
+  $numbers: (0, 2) (0, 3) (1, 2) (1, 3);
+  @return tetris-piece(
+    $fill,
+    $numbers,
+    $blocksize,
+    $grid-dimensions,
+    $background
+  );
+}
+
+@function tetris-t(
+  $fill,
+  $blocksize: null,
+  $grid-dimensions: 4,
+  $background: white
+) {
+  $numbers: (0, 2) (1, 2) (2, 2) (1, 3);
+  @return tetris-piece(
+    $fill,
+    $numbers,
+    $blocksize,
+    $grid-dimensions,
+    $background
+  );
 }
 
 /****************************************
@@ -111,15 +243,33 @@ $column-size: 24px;
             (0, 2) (1, 2) (2, 2)
 
   $blocksize - The size, which defaults to the variable $tetris-block-size
+  $grid-dimensions - I forgot what this one does... :)
   $background - The background color of the page, for the "transparent" sections
 *****************************************/
-@function tetris-piece($fill, $blocks, $blocksize:$tetris-block-size, $grid-dimensions:0, $background:white) {
-  $spacing: $blocksize * 0.1; 
+@function tetris-piece(
+  $fill,
+  $blocks,
+  $blocksize: null,
+  $grid-dimensions: 0,
+  $background: white
+) {
+  @if ($blocksize == null) {
+    $blocksize: $tetris-block-size;
+  }
+  $spacing: $blocksize * 0.05;
   $svg: '';
   $max-width: 0;
   $max-height: 0;
   @each $block-x, $block-y in $blocks {
-    $svg : $svg + tetris-block($block-x, $block-y, $fill, $blocksize, $background, $spacing);
+    $svg: $svg +
+      tetris-block(
+        $block-x,
+        $block-y,
+        $fill,
+        $blocksize,
+        $background,
+        $spacing
+      );
     @if ($block-x > $max-width) {
       $max-width: $block-x;
     }
@@ -127,7 +277,8 @@ $column-size: 24px;
       $max-height: $block-y;
     }
   }
-  $grid-size: $blocksize * max(max($max-height, $max-width)+1, $grid-dimensions);
+  $grid-size: $blocksize *
+    max(max($max-height, $max-width) + 1, $grid-dimensions);
   $svg-header: '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="#{$grid-size}" height="#{$grid-size}" viewBox="0 0 #{$grid-size} #{$grid-size}">';
   @return url-svg($svg-header + $svg + '</svg>');
   /*@return url-svg($svg-header 
@@ -139,74 +290,125 @@ $column-size: 24px;
   //@return url-svg('<svg  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="#{$blocksize*2}" height="#{$blocksize*3}" viewBox="0 0 80 #{$blocksize*3}"> <rect x="#{$blocksize}" y="0" height="#{$blocksize}" width="#{$blocksize}" stroke="#{$background}" stroke-width="#{spacing}" fill="#{$fill}"/> <rect x="#{$blocksize}" y="#{$blocksize}" height="#{$blocksize}" width="#{$blocksize}" stroke="#{$background}" stroke-width="#{spacing}" fill="#{$fill}"/> <rect x="#{$blocksize}" y="#{$blocksize*2}" height="#{$blocksize}" width="#{$blocksize}" stroke="#{$background}" stroke-width="#{spacing}" fill="#{$fill}"/> <rect x="0" y="#{$blocksize*2}" height="#{$blocksize}" width="#{$blocksize}" stroke="#{$background}" stroke-width="#{spacing}" fill="#{$fill}"/> </svg>');
 }
 
-@function tetris-block($pos-x, $pos-y, $fill, $blocksize, $background, $spacing) {
+@function tetris-block(
+  $pos-x,
+  $pos-y,
+  $fill,
+  $blocksize,
+  $background,
+  $spacing
+) {
   @return '<rect x="#{$pos-x*$blocksize}" y="#{$pos-y*$blocksize}" height="#{$blocksize}" width="#{$blocksize}" stroke="#{$background}" stroke-width="#{$spacing}" fill="#{$fill}"/>';
 }
 
 @mixin font-odibee($size: false, $color: false, $weight: false, $lh: false) {
-    font-family: $fontfamily-odibee;
+  font-family: $fontfamily-odibee;
+  text-transform: uppercase;
+  @if $size {
+    font-size: $size;
+  }
+  @if $color {
+    color: $color;
+  }
+  @if $weight {
+    font-weight: $weight;
+  }
+  @if $lh {
+    line-height: $lh;
+  }
+}
+
+@mixin font-press-start(
+  $size: false,
+  $color: false,
+  $weight: false,
+  $lh: false
+) {
+  font-family: $fontfamily-press-start;
+  @if $size {
+    font-size: $size;
+  }
+  @if $color {
+    color: $color;
+  }
+  @if $weight {
+    font-weight: $weight;
+  }
+  @if $lh {
+    line-height: $lh;
+  }
+}
+
+@mixin font-source(
+  $size: false,
+  $color: false,
+  $weight: false,
+  $lh: false,
+  $all-caps: false
+) {
+  font-family: $fontfamily-source;
+  @if $size {
+    font-size: $size;
+  }
+  @if $color {
+    color: $color;
+  }
+  @if $weight {
+    font-weight: $weight;
+  }
+  @if $lh {
+    line-height: $lh;
+  }
+  @if $all-caps {
     text-transform: uppercase;
-    @if $size { font-size: $size; }
-    @if $color { color: $color; }
-    @if $weight { font-weight: $weight; }
-    @if $lh { line-height: $lh; }
-}
-
-@mixin font-press-start($size: false, $color: false, $weight: false, $lh: false) {
-    font-family: $fontfamily-press-start;
-    @if $size { font-size: $size; }
-    @if $color { color: $color; }
-    @if $weight { font-weight: $weight; }
-    @if $lh { line-height: $lh; }
-}
-
-@mixin font-source($size: false, $color: false, $weight: false, $lh: false, $all-caps:false) {
-    font-family: $fontfamily-source;
-    @if $size { font-size: $size; }
-    @if $color { color: $color; }
-    @if $weight { font-weight: $weight; }
-    @if $lh { line-height: $lh; }
-    @if $all-caps { text-transform: uppercase;}
+  }
 }
 
 @mixin for-phone-only {
-  @media (max-width: 599px) { @content; }
+  @media (max-width: 599px) {
+    @content;
+  }
 }
 
 @mixin for-tablet-portrait-up {
-  @media (min-width: 600px) { @content; }
+  @media (min-width: 600px) {
+    @content;
+  }
 }
 
 @mixin for-tablet-landscape-up {
-  @media (min-width: 900px) { @content; }
+  @media (min-width: 850px) {
+    @content;
+  }
 }
 
 @mixin for-desktop-up {
-  @media (min-width: 1200px) { @content; }
+  @media (min-width: 1200px) {
+    @content;
+  }
 }
 
 @mixin standardhpadding {
-  padding-left:1rem;
-  pading-right:1rem;
+  padding-left: 1rem;
+  pading-right: 1rem;
 }
 
-@mixin section($color,$padding-left:1rem, $padding-right:1rem) {
+@mixin section($color, $padding-left: 1rem, $padding-right: 1rem) {
   h3 {
     @include font-press-start($fontsize-subheading, $color);
-    margin-top:0;
-    margin-bottom:1em;
+    margin-top: 0;
+    margin-bottom: 1em;
     overflow-wrap: break-word;
-    line-height:$fontsize-subheading*1.5;
+    line-height: $fontsize-subheading * 1.5;
   }
-  padding-left:$padding-left;
-  padding-right:$padding-right;
+  padding-left: $padding-left;
+  padding-right: $padding-right;
 }
 
-
-@mixin accent-header-line($color){
-      content: " ";
-      display: block;
-      width: 80%;
-      margin: auto;
-      border-bottom: 2px solid $color;
+@mixin accent-header-line($color) {
+  content: ' ';
+  display: block;
+  width: 80%;
+  margin: auto;
+  border-bottom: 2px solid $color;
 }

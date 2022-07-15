@@ -1,5 +1,9 @@
 @use 'variables' as *;
 
+/***************************************************************
+  Section 1 (including Header, Intro, and Main Supporting
+***************************************************************/
+
 @keyframes colorchange {
   0% {
     color: $darkblue;
@@ -35,55 +39,222 @@ header[role='banner'] {
   background-image: tetris-l-90($lightblue), tetris-reverse-l($green);
   background-position: left top, right bottom;
   background-repeat: no-repeat, no-repeat;
-  background-size: $tetris-block-size*3, $tetris-block-size*3;
-  height: 15rem;
-  margin-left:1rem;
-  margin-right:1rem;
+  background-size: $tetris-block-size * 3, $tetris-block-size * 3;
+  height: $tetris-block-size * 5;
+  margin-left: 1rem;
+  margin-right: 1rem;
+
+  @include for-tablet-portrait-up() {
+    $blocksize: $tetris-block-size-m;
+    background-image: tetris-l-90($lightblue), tetris-reverse-l($green);
+    background-size: $blocksize * 3, $blocksize * 3;
+    height: $blocksize * 4;
+  }
+
+  @include for-tablet-landscape-up() {
+    $blocksize: $tetris-block-size-l;
+    background-image: tetris-l-90($lightblue), tetris-reverse-l($green);
+    background-size: $blocksize * 3, $blocksize * 3;
+    height: $blocksize * 4;
+  }
+
+  @include for-desktop-up() {
+    $blocksize: $tetris-block-size-xl;
+    background-image: tetris-l-90($lightblue), tetris-reverse-l($green);
+    background-size: $blocksize * 3, $blocksize * 3;
+    height: $blocksize * 4;
+  }
 
   h1 {
-    padding-top: $tetris-block-size*1.5; //3.2rem;
-    margin-bottom:0;
+    padding-top: $tetris-block-size * 1.5; //3.2rem;
+    margin-bottom: 0;
 
+    @include for-tablet-portrait-up() {
+      padding-top: $tetris-block-size-m;
+    }
+
+    @include for-tablet-landscape-up() {
+      padding-top: $tetris-block-size-l;
+    }
+
+    @include for-desktop-up() {
+      padding-top: $tetris-block-size-xl * 1.2;
+    }
   }
 
   h2 {
-    margin-top:0;
-    margin-left:$tetris-block-size;
-    margin-right:$tetris-block-size;
-    margin-bottom: 0;
+    margin: 0 $tetris-block-size;
     animation: colorchange 10s infinite alternate;
+
+    @include for-tablet-portrait-up() {
+      font-size: 36pt;
+      margin: 0 $tetris-block-size-m;
+    }
+
+    @include for-tablet-landscape-up() {
+      font-size: 64pt;
+      margin: 0 $tetris-block-size-l;
+    }
+
+    @include for-desktop-up() {
+      font-size: 72pt;
+      margin: 0 $tetris-block-size-xl;
+    }
   }
 }
+
+/******* Intro *************/
 
 /** Summary section **/
 .summary {
-  margin-top:-$tetris-block-size;
-  margin-left:1rem;
-}
+  margin-top: -$tetris-block-size;
+  margin-left: 1rem;
 
-.preamble {
-  @include section($purple);
-  margin: 1rem 0 1rem 1rem;
-  padding: 1rem 1rem 1rem $tetris-block-size*2.5;
-  background-image: tetris-t-90($orange), tetris-z-90($purple);
-  background-position: left top, left bottom;
-  background-repeat: no-repeat, no-repeat;
-  background-size: $tetris-block-size*4, $tetris-block-size*4;
-  @include for-tablet-portrait-up{
-    background-image:none;
+  @include for-tablet-portrait-up() {
+    margin-top: -$tetris-block-size-m;
+  }
+
+  @include for-tablet-landscape-up() {
+    margin-top: -$tetris-block-size-l;
+  }
+
+  @include for-desktop-up() {
+    margin-top: -$tetris-block-size-l;
+    text-align: center;
+    //margin-left: $tetris-block-size-xl;
   }
 }
 
+/***  Preamble ***/
+.preamble {
+  @include section($purple);
+  margin: 1rem 0 1rem 1rem;
+  padding: 1rem 1rem 1rem $tetris-block-size * 2.5;
+  background-image: tetris-t-90($orange, $tetris-block-size, 0, 2),
+    tetris-z-90($purple, $tetris-block-size, 0, 0, 5);
+  background-position: left top, left bottom;
+  background-repeat: no-repeat, no-repeat;
+
+  @include for-tablet-landscape-up {
+    $blocksize: $tetris-block-size-l;
+
+    background-image: tetris-t-90($orange, $blocksize),
+      tetris-t($purple, 1rem, 6);
+    padding: 1rem 1rem 6rem $blocksize * 3;
+    background-size: $tetris-block-size-l * 4, 8rem;
+    background-position: left top, right bottom;
+    margin: -2rem 0 1rem 1rem;
+
+    h3 {
+      padding: 6rem 0 0 0;
+    }
+  }
+
+  @include for-desktop-up {
+    $blocksize: $tetris-block-size-xl;
+    background-image: tetris-t-90($orange, $blocksize),
+      tetris-t($purple, 1rem, 6);
+    padding: 1rem 1rem 6rem $blocksize * 3;
+    background-size: $tetris-block-size-xl * 4, 8rem;
+    background-position: left top, right bottom;
+    margin: -5rem 0 1rem 1rem;
+
+    h3 {
+      padding: 8rem 0 0 0;
+    }
+  }
+}
+
+/**************** Main Supporting ***************/
+
+/** explanation **/
+
 .explanation {
   @include section($green);
-  padding-top:1em;
-  padding-bottom:1em;
+  background-clip: border-box;
+  margin: 1rem 1rem 1rem 0;
+  padding: 1rem $tetris-block-size * 1.5 1rem 1rem;
+  background-image: tetris-reverse-l-270($darkblue, $tetris-block-size, 1, 0),
+    tetris-piece($lightblue, (3, 2) (3, 3) (4, 3) (4, 4), $tetris-block-size),
+    //6x6
+    tetris-piece($yellow, (3, 1) (4, 1) (5, 1) (4, 2), 0.5rem, 8),
+    tetris-piece($orange, (5, 3) (6, 3) (6, 4) (6, 5), $tetris-block-size, 7);
+  background-size: $tetris-block-size * 4, $tetris-block-size * 5,
+    $tetris-block-size * 3, $tetris-block-size * 3;
+  background-position: right top, right top, right bottom, right bottom;
+  background-repeat: no-repeat, no-repeat;
+
+  h3 {
+    padding-top: $tetris-block-size;
+  }
+  p {
+    padding-right: 1rem;
+  }
+
+  @include for-tablet-portrait-up() {
+    $blocksize: $tetris-block-size-m;
+    background-image: tetris-piece($darkblue, (0, 0) (1, 0) (1, 1) (2, 1)),
+      tetris-piece($yellow, (2, 1) (3, 1) (4, 1) (4, 2), $tetris-block-size),
+      tetris-piece($lightblue, (1, 0) (1, 1) (2, 1) (2, 2), 6, 6);
+    background-position: right top, right bottom;
+    background-size: $blocksize * 3;
+    padding-left: 6rem;
+    h3 {
+      padding-bottom: 1rem;
+      padding-right: $blocksize * 3;
+    }
+    p {
+      padding-right: $blocksize * 2;
+    }
+  }
+
+  @include for-tablet-landscape-up() {
+    $blocksize: $tetris-block-size-l;
+    background-image: tetris-piece($darkblue, (0, 0) (1, 0) (1, 1) (2, 1)),
+      tetris-piece($yellow, (2, 1) (3, 1) (4, 1) (4, 2), $tetris-block-size, 7),
+      tetris-piece($lightblue, (1, 0) (1, 1) (2, 1) (2, 2), 6, 6);
+    background-position: right top, right bottom, left bottom;
+    background-size: $blocksize * 3, $blocksize * 2, $blocksize;
+    padding-left: 6rem;
+    h3 {
+      padding-bottom: 1rem;
+      padding-right: $blocksize * 3;
+    }
+    p {
+      padding-right: $blocksize * 2;
+    }
+  }
+
+  @include for-desktop-up() {
+    $blocksize: $tetris-block-size-xl;
+    background-image: tetris-piece($darkblue, (0, 0) (1, 0) (1, 1) (2, 1)),
+      tetris-piece(
+        $lightblue,
+        (1, 0) (1, 1) (2, 1) (2, 2),
+        $tetris-block-size,
+        6
+      );
+    background-position: right top, left bottom;
+    background-size: $blocksize * 3, $blocksize;
+    padding-left: 6rem;
+    h3 {
+      padding-bottom: 1rem;
+      padding-right: $blocksize * 3;
+    }
+    p {
+      padding-right: $blocksize * 2;
+    }
+  }
 }
+
+/********** end of section 1 ********************/
+
+/** participation **/
 
 .participation {
   @include section($orange);
   background-color: black;
-  padding-top:1em;
+  padding-top: 1em;
   p {
     @include font-source($fontsize-body, $body-color-light);
   }
@@ -92,26 +263,27 @@ header[role='banner'] {
 .benefits {
   @include section($yellow);
   background-color: black;
-  padding-top:1em;
+  padding-top: 1em;
   p {
     @include font-source($fontsize-body, $body-color-light);
-  }  
+  }
 }
 
 .requirements {
   @include section($darkblue);
 
-  padding-top:1em;
+  padding-top: 1em;
 }
 
 footer {
-  width:100%;
-  display:flex;
+  width: 100%;
+  display: flex;
   flex-direction: row;
   justify-content: center;
 }
 //Boxed Sidebar
-.design-archives, .zen-resources {
+.design-archives,
+.zen-resources {
   border: 1px solid $darkblue;
   max-width: 175px;
   h3 {
@@ -130,7 +302,7 @@ footer {
   background-color: $darkblue;
   color: white;
   padding: 15px 0px;
-  h3.select{
+  h3.select {
     color: white;
     &::after {
       @include accent-header-line(white);
@@ -148,6 +320,56 @@ footer {
     }
     &:active {
       color: $green;
+    }
+  }
+}
+
+footer {
+  a {
+    height: 3rem;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    background-position: left center;
+    background-repeat: no-repeat;
+
+    margin: 0.2rem;
+    text-align: center;
+  }
+
+  a:nth-child(1) {
+    padding-left: 0.75rem;
+    background-image: tetris-bar($lightblue, 1rem);
+    background-size: 3rem 3rem;
+  }
+
+  a:nth-child(2) {
+    padding-left: 2.5rem;
+    background-image: tetris-z($green, 1rem);
+    background-size: 3rem 3rem;
+  }
+
+  a:nth-child(3) {
+    padding-left: 1.6rem;
+    background-image: tetris-l($orange, 1rem);
+    background-size: 3rem 3rem;
+  }
+  a:nth-child(4) {
+    padding-left: 1.8rem;
+    background-image: tetris-square($red, 1rem);
+    background-size: 3rem 3rem;
+  }
+
+  a:nth-child(5) {
+    padding-left: 2.4rem;
+    background-image: tetris-t($purple, 1rem);
+    background-size: 3rem 3rem;
+  }
+
+  @include for-tablet-portrait-up() {
+    a {
+      //width: 6rem;
+      margin: 1rem;
     }
   }
 }
