@@ -431,10 +431,12 @@ header[role=banner] h2 {
 }
 @media (min-width: 1200px) {
   .explanation {
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="9rem" height="9rem" viewBox="0 0 9rem 9rem"><rect x="0rem" y="0rem" height="3rem" width="3rem" stroke="white" stroke-width="0.15rem" fill="%2315295b"/><rect x="3rem" y="0rem" height="3rem" width="3rem" stroke="white" stroke-width="0.15rem" fill="%2315295b"/><rect x="3rem" y="3rem" height="3rem" width="3rem" stroke="white" stroke-width="0.15rem" fill="%2315295b"/><rect x="6rem" y="3rem" height="3rem" width="3rem" stroke="white" stroke-width="0.15rem" fill="%2315295b"/></svg>'), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18rem" height="18rem" viewBox="0 0 18rem 18rem"><rect x="3rem" y="0rem" height="3rem" width="3rem" stroke="white" stroke-width="0.15rem" fill="%2300ace5"/><rect x="3rem" y="3rem" height="3rem" width="3rem" stroke="white" stroke-width="0.15rem" fill="%2300ace5"/><rect x="6rem" y="3rem" height="3rem" width="3rem" stroke="white" stroke-width="0.15rem" fill="%2300ace5"/><rect x="6rem" y="6rem" height="3rem" width="3rem" stroke="white" stroke-width="0.15rem" fill="%2300ace5"/></svg>');
-    background-position: right top, left bottom;
-    background-size: 24rem, 8rem;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="9rem" height="9rem" viewBox="0 0 9rem 9rem"><rect x="0rem" y="0rem" height="3rem" width="3rem" stroke="white" stroke-width="0.15rem" fill="%2315295b"/><rect x="3rem" y="0rem" height="3rem" width="3rem" stroke="white" stroke-width="0.15rem" fill="%2315295b"/><rect x="3rem" y="3rem" height="3rem" width="3rem" stroke="white" stroke-width="0.15rem" fill="%2315295b"/><rect x="6rem" y="3rem" height="3rem" width="3rem" stroke="white" stroke-width="0.15rem" fill="%2315295b"/></svg>'), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12rem" height="12rem" viewBox="0 0 12rem 12rem"><rect x="3rem" y="0rem" height="3rem" width="3rem" stroke="white" stroke-width="0.15rem" fill="%2300ace5"/><rect x="3rem" y="3rem" height="3rem" width="3rem" stroke="white" stroke-width="0.15rem" fill="%2300ace5"/><rect x="6rem" y="3rem" height="3rem" width="3rem" stroke="white" stroke-width="0.15rem" fill="%2300ace5"/><rect x="6rem" y="6rem" height="3rem" width="3rem" stroke="white" stroke-width="0.15rem" fill="%2300ace5"/></svg>');
+    background-position: right top, left top;
+    background-size: 24rem, 6rem;
     padding-left: 6rem;
+    animation: test 4s 1;
+    animation-fill-mode: forwards;
   }
   .explanation h3 {
     padding-bottom: 1rem;
@@ -445,13 +447,21 @@ header[role=banner] h2 {
   }
 }
 
+@keyframes test {
+  from {
+    background-position: right top, left top;
+  }
+  to {
+    background-position: right top, left bottom;
+  }
+}
 /********** end of section 1 ********************/
 /** participation **/
 .participation {
   padding-left: 1rem;
   padding-right: 1rem;
-  background-color: black;
-  padding-top: 1em;
+  background-color: #15295b;
+  padding: 3rem 1rem 1rem 1rem;
 }
 .participation h3 {
   font-family: "Press Start 2P", Arial, Verdana, sans-serif;
@@ -467,12 +477,15 @@ header[role=banner] h2 {
   font-size: 14pt;
   color: white;
 }
+.participation a {
+  color: #00ace5;
+}
 
 .benefits {
   padding-left: 1rem;
   padding-right: 1rem;
-  background-color: black;
-  padding-top: 1em;
+  background-color: #15295b;
+  padding: 3rem 1rem;
 }
 .benefits h3 {
   font-family: "Press Start 2P", Arial, Verdana, sans-serif;

@@ -232,11 +232,13 @@ header[role='banner'] {
         $lightblue,
         (1, 0) (1, 1) (2, 1) (2, 2),
         $tetris-block-size,
-        6
+        4
       );
-    background-position: right top, left bottom;
-    background-size: $blocksize * 3, $blocksize;
+    background-position: right top, left top;
+    background-size: $blocksize * 3, 6rem;
     padding-left: 6rem;
+    animation: test 4s 1;
+    animation-fill-mode: forwards;
     h3 {
       padding-bottom: 1rem;
       padding-right: $blocksize * 3;
@@ -247,23 +249,36 @@ header[role='banner'] {
   }
 }
 
+@keyframes test {
+  from {
+    background-position: right top, left top;
+  }
+  to {
+    background-position: right top, left bottom;
+  }
+}
+
 /********** end of section 1 ********************/
 
 /** participation **/
 
 .participation {
   @include section($orange);
-  background-color: black;
-  padding-top: 1em;
+  background-color: $darkblue;
+  padding: 3rem 1rem 1rem 1rem;
   p {
     @include font-source($fontsize-body, $body-color-light);
+  }
+
+  a {
+    color: $lightblue;
   }
 }
 
 .benefits {
   @include section($yellow);
-  background-color: black;
-  padding-top: 1em;
+  background-color: $darkblue;
+  padding: 3rem 1rem;
   p {
     @include font-source($fontsize-body, $body-color-light);
   }
