@@ -329,7 +329,7 @@ footer {
   @include for-desktop-up{
   position: relative;
   height: auto;
-  top: 55vh;
+  top: -205vh;
   left: 7vw;
 }
 }
@@ -337,13 +337,14 @@ footer {
   @include for-desktop-up{
   position: relative;
   height: auto;
+  top: -225vh;
   left: 62.2vw;
 }
 }
 .requirements {
   @include for-desktop-up{
   position: relative;
-  top: 240vh;
+  top: 10vh;
   left: 25vw;
   @include section($darkblue);
   max-width: 38vw;
