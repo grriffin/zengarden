@@ -297,14 +297,11 @@ header[role='banner'] {
   }
 }
 
-.requirements {
-  @include section($darkblue);
-
-  padding-top: 1em;
-}
-
 footer {
   width: 100%;
+  position: relative;
+  top: $vh;
+  left: $vw;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -324,7 +321,28 @@ footer {
     max-width: 80%;
   }
 }
-
+.zen-resources{
+  position: relative;
+  height: auto;
+  top: 8vh;
+  left: 25vh;
+  // background-image: tetris-square($red,$tetris-block-size);
+  // background-position: top, right;
+  // z-index: 100;
+}
+.design-archives{
+  position: relative;
+  height: auto;
+  left: 62.2vw;
+}
+.requirements {
+  position: relative;
+  top: 240vh;
+  left: 25vw;
+  @include section($darkblue);
+  max-width: 38vw;
+  padding-top: 1em;
+}
 //Open Sidebar w/ Color BG
 .design-selection {
   background-color: $darkblue;
