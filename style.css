@@ -470,6 +470,7 @@ header[role=banner] h2 {
 .participation {
   padding-left: 1rem;
   padding-right: 1rem;
+  max-width: 600px;
   background-color: #15295b;
   padding: 3rem 1rem 1rem 1rem;
 }
@@ -494,6 +495,7 @@ header[role=banner] h2 {
 .benefits {
   padding-left: 1rem;
   padding-right: 1rem;
+  max-width: 600px;
   background-color: #15295b;
   padding: 3rem 1rem;
 }
@@ -567,9 +569,6 @@ header[role=banner] h2 {
     padding-right: 1rem;
     max-width: 38vw;
     padding-top: 1em;
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24rem" height="24rem" viewBox="0 0 24rem 24rem"><rect x="16rem" y="0rem" height="8rem" width="8rem" stroke="white" stroke-width="0.4rem" fill="%23fd8c13"/><rect x="16rem" y="8rem" height="8rem" width="8rem" stroke="white" stroke-width="0.4rem" fill="%23fd8c13"/><rect x="16rem" y="16rem" height="8rem" width="8rem" stroke="white" stroke-width="0.4rem" fill="%23fd8c13"/><rect x="8rem" y="16rem" height="8rem" width="8rem" stroke="white" stroke-width="0.4rem" fill="%23fd8c13"/></svg>'), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32rem" height="32rem" viewBox="0 0 32rem 32rem"><rect x="0rem" y="16rem" height="8rem" width="8rem" stroke="white" stroke-width="0.4rem" fill="%2315295b"/><rect x="0rem" y="24rem" height="8rem" width="8rem" stroke="white" stroke-width="0.4rem" fill="%2315295b"/><rect x="8rem" y="16rem" height="8rem" width="8rem" stroke="white" stroke-width="0.4rem" fill="%2315295b"/><rect x="8rem" y="24rem" height="8rem" width="8rem" stroke="white" stroke-width="0.4rem" fill="%2315295b"/></svg>');
-    background-position: right bottom, top left;
-    background-repeat: no-repeat, no-repeat;
   }
   .requirements h3 {
     font-family: "Press Start 2P", Arial, Verdana, sans-serif;
@@ -584,8 +583,12 @@ header[role=banner] h2 {
 
 .design-selection {
   background-color: #15295b;
+  position: relative;
+  top: -253.5vh;
+  right: -48vw;
   color: white;
   padding: 15px 0px;
+  max-width: 400px;
 }
 .design-selection h3.select {
   color: white;

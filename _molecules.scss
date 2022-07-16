@@ -277,6 +277,7 @@ header[role='banner'] {
 
 .participation {
   @include section($orange);
+  max-width: 600px;
   background-color: $darkblue;
   padding: 3rem 1rem 1rem 1rem;
   p {
@@ -290,6 +291,7 @@ header[role='banner'] {
 
 .benefits {
   @include section($yellow);
+  max-width: 600px;
   background-color: $darkblue;
   padding: 3rem 1rem;
   p {
@@ -329,9 +331,6 @@ footer {
   height: auto;
   top: 55vh;
   left: 7vw;
-  // background-image: tetris-square($red,$tetris-block-size);
-  // background-position: top, right;
-  // z-index: 100;
 }
 }
 .design-archives{
@@ -349,17 +348,23 @@ footer {
   @include section($darkblue);
   max-width: 38vw;
   padding-top: 1em;
-  $blocksize: $tetris-block-size;
-  background-image: tetris-reverse-l($orange,$tetris-block-size-xl),tetris-square($darkblue, $tetris-block-size-xl);
-  background-position: right bottom , top left;
-  background-repeat: no-repeat, no-repeat;
+  // $blocksize: $tetris-block-size;
+  // background-image: tetris-reverse-l($orange,$tetris-block-size-xl),tetris-square($darkblue, $tetris-block-size-xl);
+  // background-position: right bottom ,left top;
+  // background-repeat: no-repeat, no-repeat;
+  // margin: -2rem 0 1rem 1rem;
 }
 }
 //Open Sidebar w/ Color BG
 .design-selection {
   background-color: $darkblue;
+  position: relative;
+  top: -253.5vh;
+  right: -48vw;
   color: white;
   padding: 15px 0px;
+  max-width: 400px;
+  // max-height: 200vh;
   h3.select {
     color: white;
     &::after {
