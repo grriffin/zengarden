@@ -135,7 +135,6 @@ header[role='banner'] {
   background-position: left top, left bottom;
   background-repeat: no-repeat, no-repeat;
 
-
   @include for-tablet-landscape-up {
     $blocksize: $tetris-block-size-l;
 
@@ -159,24 +158,17 @@ header[role='banner'] {
     background-size: $tetris-block-size-xl * 4, 8rem;
     background-position: left top, right bottom;
     margin: -5rem 0 1rem 1rem;
-    animation: test2 10s infinite;
-    animation-fill-mode: forwards;
-
+    animation: background-slide-2 15s infinite;
     h3 {
       padding: 8rem 0 0 0;
     }
-    @keyframes test2 {
-      from {
-        background-position: right bottom,left bottom;
-      }
-      to {
-        background-position: left bottom, right bottom;
+    @keyframes background-slide-2 {
+      50% {
+        background-position: right bottom, left bottom;
       }
     }
-
   }
 }
-
 
 /**************** Main Supporting ***************/
 
@@ -250,7 +242,7 @@ header[role='banner'] {
     background-position: right top, left top;
     background-size: $blocksize * 3, 6rem;
     padding-left: 6rem;
-    animation: test 10s infinite;
+    animation: background-slide 4s 1;
     animation-fill-mode: forwards;
     h3 {
       padding-bottom: 1rem;
@@ -262,7 +254,7 @@ header[role='banner'] {
   }
 }
 
-@keyframes test {
+@keyframes background-slide {
   from {
     background-position: right top, left top;
   }
@@ -300,14 +292,14 @@ header[role='banner'] {
 }
 
 footer {
-  @include for-desktop-up{
-  width: 100%;
-  position: relative;
-  top: $vh;
-  left: $vw;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+  @include for-desktop-up {
+    width: 100%;
+    position: relative;
+    top: $vh;
+    left: $vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
   }
 }
 //Boxed Sidebar
@@ -325,42 +317,42 @@ footer {
     max-width: 80%;
   }
 }
-.zen-resources{
-  @include for-desktop-up{
-  position: relative;
-  height: auto;
-  top: -205vh;
-  left: 7vw;
+.zen-resources {
+  @include for-desktop-up {
+    position: relative;
+    height: auto;
+    top: -205vh;
+    left: 7vw;
+  }
 }
-}
-.design-archives{
-  @include for-desktop-up{
-  position: relative;
-  height: auto;
-  top: -225vh;
-  left: 62.2vw;
-}
+.design-archives {
+  @include for-desktop-up {
+    position: relative;
+    height: auto;
+    top: -225vh;
+    left: 62.2vw;
+  }
 }
 .requirements {
-  @include for-desktop-up{
-  position: relative;
-  top: 10vh;
-  left: 25vw;
-  @include section($darkblue);
-  max-width: 38vw;
-  padding-top: 1em;
-  // $blocksize: $tetris-block-size;
-  // background-image: tetris-reverse-l($orange,$tetris-block-size-xl),tetris-square($darkblue, $tetris-block-size-xl);
-  // background-position: right bottom ,left top;
-  // background-repeat: no-repeat, no-repeat;
-  // margin: -2rem 0 1rem 1rem;
-}
+  @include for-desktop-up {
+    position: relative;
+    top: 10vh;
+    left: 25vw;
+    @include section($darkblue);
+    max-width: 38vw;
+    padding-top: 1em;
+    // $blocksize: $tetris-block-size;
+    // background-image: tetris-reverse-l($orange,$tetris-block-size-xl),tetris-square($darkblue, $tetris-block-size-xl);
+    // background-position: right bottom ,left top;
+    // background-repeat: no-repeat, no-repeat;
+    // margin: -2rem 0 1rem 1rem;
+  }
 }
 //Open Sidebar w/ Color BG
 .design-selection {
   background-color: $darkblue;
   position: relative;
-  top: -253.5vh;
+  top: -213.5vh;
   right: -48vw;
   color: white;
   padding: 15px 0px;

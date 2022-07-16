@@ -365,18 +365,14 @@ header[role=banner] h2 {
     background-size: 32rem, 8rem;
     background-position: left top, right bottom;
     margin: -5rem 0 1rem 1rem;
-    animation: test2 10s infinite;
-    animation-fill-mode: forwards;
+    animation: background-slide-2 15s infinite;
   }
   .preamble h3 {
     padding: 8rem 0 0 0;
   }
-  @keyframes test2 {
-    from {
+  @keyframes background-slide-2 {
+    50% {
       background-position: right bottom, left bottom;
-    }
-    to {
-      background-position: left bottom, right bottom;
     }
   }
 }
@@ -445,7 +441,7 @@ header[role=banner] h2 {
     background-position: right top, left top;
     background-size: 24rem, 6rem;
     padding-left: 6rem;
-    animation: test 10s infinite;
+    animation: background-slide 4s 1;
     animation-fill-mode: forwards;
   }
   .explanation h3 {
@@ -457,7 +453,7 @@ header[role=banner] h2 {
   }
 }
 
-@keyframes test {
+@keyframes background-slide {
   from {
     background-position: right top, left top;
   }
@@ -585,7 +581,7 @@ header[role=banner] h2 {
 .design-selection {
   background-color: #15295b;
   position: relative;
-  top: -253.5vh;
+  top: -213.5vh;
   right: -48vw;
   color: white;
   padding: 15px 0px;
