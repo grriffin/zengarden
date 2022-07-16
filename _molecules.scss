@@ -298,6 +298,7 @@ header[role='banner'] {
 }
 
 footer {
+  @include for-desktop-up{
   width: 100%;
   position: relative;
   top: $vh;
@@ -305,6 +306,7 @@ footer {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  }
 }
 //Boxed Sidebar
 .design-archives,
@@ -322,31 +324,36 @@ footer {
   }
 }
 .zen-resources{
+  @include for-desktop-up{
   position: relative;
   height: auto;
-  top: 70vh;
+  top: 55vh;
   left: 7vw;
   // background-image: tetris-square($red,$tetris-block-size);
   // background-position: top, right;
   // z-index: 100;
 }
+}
 .design-archives{
+  @include for-desktop-up{
   position: relative;
   height: auto;
   left: 62.2vw;
 }
+}
 .requirements {
+  @include for-desktop-up{
   position: relative;
   top: 240vh;
   left: 25vw;
   @include section($darkblue);
   max-width: 38vw;
   padding-top: 1em;
-
+  $blocksize: $tetris-block-size;
   background-image: tetris-reverse-l($orange,$tetris-block-size-xl),tetris-square($darkblue, $tetris-block-size-xl);
   background-position: right bottom , top left;
-
   background-repeat: no-repeat, no-repeat;
+}
 }
 //Open Sidebar w/ Color BG
 .design-selection {

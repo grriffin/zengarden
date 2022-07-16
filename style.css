@@ -512,14 +512,16 @@ header[role=banner] h2 {
   color: white;
 }
 
-footer {
-  width: 100%;
-  position: relative;
-  top: 260vh;
-  left: -20vw;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+@media (min-width: 1200px) {
+  footer {
+    width: 100%;
+    position: relative;
+    top: 245vh;
+    left: -20vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
 }
 
 .design-archives,
@@ -539,39 +541,45 @@ footer {
   max-width: 80%;
 }
 
-.zen-resources {
-  position: relative;
-  height: auto;
-  top: 70vh;
-  left: 7vw;
+@media (min-width: 1200px) {
+  .zen-resources {
+    position: relative;
+    height: auto;
+    top: 55vh;
+    left: 7vw;
+  }
 }
 
-.design-archives {
-  position: relative;
-  height: auto;
-  left: 62.2vw;
+@media (min-width: 1200px) {
+  .design-archives {
+    position: relative;
+    height: auto;
+    left: 62.2vw;
+  }
 }
 
-.requirements {
-  position: relative;
-  top: 240vh;
-  left: 25vw;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  max-width: 38vw;
-  padding-top: 1em;
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24rem" height="24rem" viewBox="0 0 24rem 24rem"><rect x="16rem" y="0rem" height="8rem" width="8rem" stroke="white" stroke-width="0.4rem" fill="%23fd8c13"/><rect x="16rem" y="8rem" height="8rem" width="8rem" stroke="white" stroke-width="0.4rem" fill="%23fd8c13"/><rect x="16rem" y="16rem" height="8rem" width="8rem" stroke="white" stroke-width="0.4rem" fill="%23fd8c13"/><rect x="8rem" y="16rem" height="8rem" width="8rem" stroke="white" stroke-width="0.4rem" fill="%23fd8c13"/></svg>'), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32rem" height="32rem" viewBox="0 0 32rem 32rem"><rect x="0rem" y="16rem" height="8rem" width="8rem" stroke="white" stroke-width="0.4rem" fill="%2315295b"/><rect x="0rem" y="24rem" height="8rem" width="8rem" stroke="white" stroke-width="0.4rem" fill="%2315295b"/><rect x="8rem" y="16rem" height="8rem" width="8rem" stroke="white" stroke-width="0.4rem" fill="%2315295b"/><rect x="8rem" y="24rem" height="8rem" width="8rem" stroke="white" stroke-width="0.4rem" fill="%2315295b"/></svg>');
-  background-position: right bottom, top left;
-  background-repeat: no-repeat, no-repeat;
-}
-.requirements h3 {
-  font-family: "Press Start 2P", Arial, Verdana, sans-serif;
-  font-size: 16pt;
-  color: #15295b;
-  margin-top: 0;
-  margin-bottom: 1em;
-  overflow-wrap: break-word;
-  line-height: 24pt;
+@media (min-width: 1200px) {
+  .requirements {
+    position: relative;
+    top: 240vh;
+    left: 25vw;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    max-width: 38vw;
+    padding-top: 1em;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24rem" height="24rem" viewBox="0 0 24rem 24rem"><rect x="16rem" y="0rem" height="8rem" width="8rem" stroke="white" stroke-width="0.4rem" fill="%23fd8c13"/><rect x="16rem" y="8rem" height="8rem" width="8rem" stroke="white" stroke-width="0.4rem" fill="%23fd8c13"/><rect x="16rem" y="16rem" height="8rem" width="8rem" stroke="white" stroke-width="0.4rem" fill="%23fd8c13"/><rect x="8rem" y="16rem" height="8rem" width="8rem" stroke="white" stroke-width="0.4rem" fill="%23fd8c13"/></svg>'), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32rem" height="32rem" viewBox="0 0 32rem 32rem"><rect x="0rem" y="16rem" height="8rem" width="8rem" stroke="white" stroke-width="0.4rem" fill="%2315295b"/><rect x="0rem" y="24rem" height="8rem" width="8rem" stroke="white" stroke-width="0.4rem" fill="%2315295b"/><rect x="8rem" y="16rem" height="8rem" width="8rem" stroke="white" stroke-width="0.4rem" fill="%2315295b"/><rect x="8rem" y="24rem" height="8rem" width="8rem" stroke="white" stroke-width="0.4rem" fill="%2315295b"/></svg>');
+    background-position: right bottom, top left;
+    background-repeat: no-repeat, no-repeat;
+  }
+  .requirements h3 {
+    font-family: "Press Start 2P", Arial, Verdana, sans-serif;
+    font-size: 16pt;
+    color: #15295b;
+    margin-top: 0;
+    margin-bottom: 1em;
+    overflow-wrap: break-word;
+    line-height: 24pt;
+  }
 }
 
 .design-selection {
