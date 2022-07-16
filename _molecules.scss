@@ -324,8 +324,8 @@ footer {
 .zen-resources{
   position: relative;
   height: auto;
-  top: 8vh;
-  left: 25vh;
+  top: 70vh;
+  left: 7vw;
   // background-image: tetris-square($red,$tetris-block-size);
   // background-position: top, right;
   // z-index: 100;
@@ -342,6 +342,11 @@ footer {
   @include section($darkblue);
   max-width: 38vw;
   padding-top: 1em;
+
+  background-image: tetris-reverse-l($orange,$tetris-block-size-xl),tetris-square($darkblue, $tetris-block-size-xl);
+  background-position: right bottom , top left;
+
+  background-repeat: no-repeat, no-repeat;
 }
 //Open Sidebar w/ Color BG
 .design-selection {

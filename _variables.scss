@@ -33,8 +33,8 @@ $tetris-block-size-l: 6rem;
 $tetris-block-size-xl: 8rem;
 
 $column-size: 24px;
-$vh:200vh;
-$vw:-15vw;
+$vh:260vh;
+$vw:-20vw;
 
 @function str-replace($string, $search, $replace: '') {
   $index: str-index($string, $search);
