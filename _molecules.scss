@@ -135,6 +135,7 @@ header[role='banner'] {
   background-position: left top, left bottom;
   background-repeat: no-repeat, no-repeat;
 
+
   @include for-tablet-landscape-up {
     $blocksize: $tetris-block-size-l;
 
@@ -158,12 +159,24 @@ header[role='banner'] {
     background-size: $tetris-block-size-xl * 4, 8rem;
     background-position: left top, right bottom;
     margin: -5rem 0 1rem 1rem;
+    animation: test2 10s infinite;
+    animation-fill-mode: forwards;
 
     h3 {
       padding: 8rem 0 0 0;
     }
+    @keyframes test2 {
+      from {
+        background-position: right bottom,left bottom;
+      }
+      to {
+        background-position: left bottom, right bottom;
+      }
+    }
+
   }
 }
+
 
 /**************** Main Supporting ***************/
 
@@ -237,7 +250,7 @@ header[role='banner'] {
     background-position: right top, left top;
     background-size: $blocksize * 3, 6rem;
     padding-left: 6rem;
-    animation: test 4s 1;
+    animation: test 10s infinite;
     animation-fill-mode: forwards;
     h3 {
       padding-bottom: 1rem;
