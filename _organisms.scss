@@ -11,3 +11,104 @@
     }
   }
 }
+
+//Grid Setup
+.page-wrapper {
+  display: grid;
+  width: 85%;
+  grid-template: 2fr / 1fr;
+  section.intro {
+    grid-row: 1;
+  }
+  #zen-supporting {
+    grid-row: 2;
+    grid-column: 1;
+    display: grid;
+    width: 100%;
+    grid-template-rows: 2fr 2fr 1fr 1fr 1fr 1fr 2fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 24px;
+    grid-template-areas: 
+      "about      about       about       about"
+      ".          participation participation participation"
+      ".          benefits    benefits    benefits"
+      ".          .           req         req"
+      ".          .           req         req"
+      ".          .           req         req"
+      ".          .           .           ."
+      "footer     footer      footer      footer";
+  }
+  aside {
+    grid-row: 2;
+    grid-column: 1;
+    display: grid;
+    div.wrapper {
+      display: grid;
+      width: 100%;
+      row-gap: 24px;
+      grid-template-rows: 2fr 2fr 1fr 1fr 1fr 1fr 2fr 1fr;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-areas:
+        ".          .           .           ."
+        ".          .           .           ."
+        ".          .           .           ."  
+        ".          .           .           ."
+        "archives   archives    .           ."
+        "resources  resources   .           ."
+        "select     select      select      ."
+        ".          .           .           .";
+    }
+  }
+}
+
+header {
+  grid-area: header;
+}
+
+#zen-summary {
+  grid-area: summary;
+}
+
+#zen-preamble {
+  grid-area: preamble;
+}
+
+#zen-explanation {
+  grid-area: about;
+}
+
+#zen-participation {
+  grid-area: participation;
+}
+
+#zen-benefits {
+  grid-area: benefits;
+}
+
+#zen-requirements {
+  grid-area: req;
+}
+
+#design-archives {
+  grid-area: archives;
+  justify-self: center;
+  align-self: center;
+}
+
+#zen-resources {
+  grid-area: resources;
+  justify-self: center;
+  align-self: center;
+}
+
+#design-selection {
+  grid-area: select;
+}
+
+footer {
+  grid-area: footer;
+}
+
+footer {
+  display: flex;
+}

@@ -319,41 +319,41 @@ footer {
 }
 .zen-resources {
   @include for-desktop-up {
-    position: relative;
-    height: auto;
-    top: -205vh;
-    left: 7vw;
+    //position: relative;
+    //height: auto;
+    //top: -205vh;
+    //left: 7vw;
   }
 }
 .design-archives {
   @include for-desktop-up {
-    position: relative;
+    //position: relative;
     height: auto;
-    top: -225vh;
-    left: 62.2vw;
+    //top: -225vh;
+    //left: 62.2vw;
   }
 }
 .requirements {
   @include for-desktop-up {
-    position: relative;
-    top: 10vh;
-    left: 25vw;
+    //position: relative;
+    //top: 10vh;
+    //left: 25vw;
     @include section($darkblue);
     max-width: 38vw;
     padding-top: 1em;
-    // $blocksize: $tetris-block-size;
-    // background-image: tetris-reverse-l($orange,$tetris-block-size-xl),tetris-square($darkblue, $tetris-block-size-xl);
-    // background-position: right bottom ,left top;
-    // background-repeat: no-repeat, no-repeat;
+    $blocksize: $tetris-block-size;
+    background-image: tetris-reverse-l($orange,$tetris-block-size-xl),tetris-square($darkblue, $tetris-block-size-xl);
+    background-position: right bottom ,left top;
+    background-repeat: no-repeat, no-repeat;
     // margin: -2rem 0 1rem 1rem;
   }
 }
 //Open Sidebar w/ Color BG
 .design-selection {
   background-color: $darkblue;
-  position: relative;
-  top: -213.5vh;
-  right: -48vw;
+  //position: relative;
+  //top: -213.5vh;
+  //right: -48vw;
   color: white;
   padding: 15px 0px;
   max-width: 400px;
