@@ -540,32 +540,20 @@ header[role=banner] h2 {
 }
 
 @media (min-width: 1200px) {
-  .zen-resources {
-    position: relative;
-    height: auto;
-    top: -205vh;
-    left: 7vw;
-  }
-}
-
-@media (min-width: 1200px) {
   .design-archives {
-    position: relative;
     height: auto;
-    top: -225vh;
-    left: 62.2vw;
   }
 }
 
 @media (min-width: 1200px) {
   .requirements {
-    position: relative;
-    top: 10vh;
-    left: 25vw;
     padding-left: 1rem;
     padding-right: 1rem;
     max-width: 38vw;
     padding-top: 1em;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24rem" height="24rem" viewBox="0 0 24rem 24rem"><rect x="16rem" y="0rem" height="8rem" width="8rem" stroke="white" stroke-width="0.4rem" fill="%23fd8c13"/><rect x="16rem" y="8rem" height="8rem" width="8rem" stroke="white" stroke-width="0.4rem" fill="%23fd8c13"/><rect x="16rem" y="16rem" height="8rem" width="8rem" stroke="white" stroke-width="0.4rem" fill="%23fd8c13"/><rect x="8rem" y="16rem" height="8rem" width="8rem" stroke="white" stroke-width="0.4rem" fill="%23fd8c13"/></svg>'), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32rem" height="32rem" viewBox="0 0 32rem 32rem"><rect x="0rem" y="16rem" height="8rem" width="8rem" stroke="white" stroke-width="0.4rem" fill="%2315295b"/><rect x="0rem" y="24rem" height="8rem" width="8rem" stroke="white" stroke-width="0.4rem" fill="%2315295b"/><rect x="8rem" y="16rem" height="8rem" width="8rem" stroke="white" stroke-width="0.4rem" fill="%2315295b"/><rect x="8rem" y="24rem" height="8rem" width="8rem" stroke="white" stroke-width="0.4rem" fill="%2315295b"/></svg>');
+    background-position: right bottom, left top;
+    background-repeat: no-repeat, no-repeat;
   }
   .requirements h3 {
     font-family: "Press Start 2P", Arial, Verdana, sans-serif;
@@ -580,9 +568,6 @@ header[role=banner] h2 {
 
 .design-selection {
   background-color: #15295b;
-  position: relative;
-  top: -213.5vh;
-  right: -48vw;
   color: white;
   padding: 15px 0px;
   max-width: 400px;
@@ -658,6 +643,90 @@ footer a:nth-child(5) {
   .intro .summary p:nth-child(2) {
     font-size: 14pt;
   }
+}
+
+.page-wrapper {
+  display: grid;
+  width: 85%;
+  grid-template: 2fr/1fr;
+}
+.page-wrapper section.intro {
+  grid-row: 1;
+}
+.page-wrapper #zen-supporting {
+  grid-row: 2;
+  grid-column: 1;
+  display: grid;
+  width: 100%;
+  grid-template-rows: 2fr 2fr 1fr 1fr 1fr 1fr 2fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
+  row-gap: 24px;
+  grid-template-areas: "about      about       about       about" ".          participation participation participation" ".          benefits    benefits    benefits" ".          .           req         req" ".          .           req         req" ".          .           req         req" ".          .           .           ." "footer     footer      footer      footer";
+}
+.page-wrapper aside {
+  grid-row: 2;
+  grid-column: 1;
+  display: grid;
+}
+.page-wrapper aside div.wrapper {
+  display: grid;
+  width: 100%;
+  row-gap: 24px;
+  grid-template-rows: 2fr 2fr 1fr 1fr 1fr 1fr 2fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas: ".          .           .           ." ".          .           .           ." ".          .           .           ." ".          .           .           ." "archives   archives    .           ." "resources  resources   .           ." "select     select      select      ." ".          .           .           .";
+}
+
+header {
+  grid-area: header;
+}
+
+#zen-summary {
+  grid-area: summary;
+}
+
+#zen-preamble {
+  grid-area: preamble;
+}
+
+#zen-explanation {
+  grid-area: about;
+}
+
+#zen-participation {
+  grid-area: participation;
+}
+
+#zen-benefits {
+  grid-area: benefits;
+}
+
+#zen-requirements {
+  grid-area: req;
+}
+
+#design-archives {
+  grid-area: archives;
+  justify-self: center;
+  align-self: center;
+}
+
+#zen-resources {
+  grid-area: resources;
+  justify-self: center;
+  align-self: center;
+}
+
+#design-selection {
+  grid-area: select;
+}
+
+footer {
+  grid-area: footer;
+}
+
+footer {
+  display: flex;
 }
 
 * {
